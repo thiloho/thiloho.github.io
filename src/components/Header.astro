@@ -13,7 +13,7 @@ const { title, pubDate, modDate, slug } = Astro.props;
 
 <header class="bg-white dark:bg-neutral-800">
   <div
-    class="prose prose-neutral dark:prose-invert mx-auto px-4 py-8 border-b border-neutral-200 dark:border-neutral-700 prose-h1:font-bold"
+    class="prose prose-neutral dark:prose-invert prose-h1:font-bold relative mx-auto px-4 py-8 before:absolute before:start-4 before:end-4 before:bottom-0 before:border-b before:border-neutral-300 before:content-[''] dark:before:border-neutral-600"
   >
     {
       pubDate ? (
@@ -27,7 +27,7 @@ const { title, pubDate, modDate, slug } = Astro.props;
           </p>
           <a
             href={`https://github.com/thiloho/thiloho.github.io/edit/main/src/content/blog/${slug}/index.md`}
-            class="text-blue-800 dark:text-blue-300 inline-flex items-center gap-1 hover:no-underline"
+            class="inline-flex items-center gap-1 text-blue-800 hover:no-underline dark:text-blue-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

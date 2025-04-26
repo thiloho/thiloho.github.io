@@ -30,7 +30,7 @@ const { Content, headings } = await render(article);
   <details class="toc sticky top-0 z-20">
     <summary
       title="Table of contents"
-      class="flex mx-auto w-fit cursor-pointer list-none px-2 py-2.5 border-b-2 border-transparent hover:bg-neutral-200 hover:border-neutral-400 hover:dark:bg-neutral-700 hover:dark:border-neutral-600"
+      class="mx-auto flex w-fit cursor-pointer list-none border-b-2 border-transparent px-2 py-2.5 hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const { Content, headings } = await render(article);
       </svg>
     </summary>
     <div
-      class="not-prose border border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 p-2 max-h-[calc(100vh-4rem)] overflow-y-scroll"
+      class="not-prose max-h-[calc(100vh-4rem)] overflow-y-scroll border border-neutral-300 bg-white p-2 dark:border-neutral-600 dark:bg-neutral-800"
     >
       <p class="text-center">
         <strong class="text-sm">Table of Contents</strong>
@@ -56,7 +56,7 @@ const { Content, headings } = await render(article);
             .map((heading) => (
               <li>
                 <a
-                  class="text-center text-blue-800 dark:text-blue-300 block py-1 px-2 hover:underline"
+                  class="block px-2 py-1 text-center text-blue-800 hover:underline dark:text-blue-300"
                   href={`#${heading.slug}`}
                   aria-labelledby={`Section: ${heading.slug}`}
                 >

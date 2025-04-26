@@ -17,7 +17,7 @@ const { title, description, pubDate, modDate, slug } = Astro.props;
 
 <html lang="en" class="light">
   <Head {title} {description} />
-  <body class="min-h-screen flex flex-col">
+  <body class="flex min-h-screen flex-col">
     <Nav />
     <Header {title} {pubDate} {modDate} {slug} />
     <main class="flex-1 bg-white dark:bg-neutral-800">
