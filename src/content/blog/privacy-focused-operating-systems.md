@@ -28,6 +28,8 @@ There are other great options, such as [FreeBSD](https://www.freebsd.org) and [O
 
 Your main choice here should probably be [GrapheneOS](https://grapheneos.org).
 
+Wikipedia states the following:
+
 > GrapheneOS is an open source, privacy and security-focused Android operating system that runs on selected Google Pixel devices, including smartphones, tablets and foldables.
 
 As mentioned in the quote, note that you need a [supported Google Pixel device](https://grapheneos.org/faq#supported-devices) to use GrapheneOS and I would not recommend using any other privacy focused or hardened mobile operating system as they do not come close to its usability while maintaining these aspects.
