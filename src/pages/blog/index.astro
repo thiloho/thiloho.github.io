@@ -13,7 +13,7 @@ const sortedArticles = allArticles.sort((a, b) => {
   <ul>
     {
       sortedArticles.map((article) => (
-        <li class="flex gap-2">
+        <li>
           <Date date={article.data.pubDate} />
           <span>&raquo;</span>
           <a
