@@ -1,0 +1,33 @@
+---
+import Date from "./Date.astro";
+
+interface Props {
+  title: string;
+  pubDate?: Date;
+  modDate?: Date;
+}
+
+const { title, pubDate, modDate } = Astro.props;
+---
+
+<header class="bg-white dark:bg-neutral-800">
+  <div
+    class="prose prose-neutral dark:prose-invert mx-auto px-4 py-8 border-b border-neutral-200 dark:border-neutral-700 prose-h1:font-bold"
+  >
+    {
+      pubDate ? (
+        <hgroup>
+          <h1 class="mb-2">{title}</h1>
+          <p>
+            Published: <Date date={pubDate} />
+            <br />
+            Last modified:{" "}
+            {modDate ? <Date date={modDate} /> : <span>No changes yet</span>}
+          </p>
+        </hgroup>
+      ) : (
+        <h1>{title}</h1>
+      )
+    }
+  </div>
+</header>

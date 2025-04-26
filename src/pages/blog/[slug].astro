@@ -1,0 +1,87 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+
+export const getStaticPaths = async () => {
+  const allArticles = await getCollection("blog");
+  return allArticles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+};
+
+const { slug } = Astro.params;
+const article = await getEntry("blog", slug);
+
+if (!article) {
+  throw new Error();
+}
+
+const { Content, headings, remarkPluginFrontmatter } = await render(article);
+---
+
+<PageLayout
+  title={article.data.title}
+  metaDescription="Blog"
+  pubDate={article.data.pubDate}
+  modDate={remarkPluginFrontmatter.lastModified}
+>
+  <details class="toc sticky top-0 z-20">
+    <summary
+      title="Table of contents"
+      class="flex mx-auto w-fit cursor-pointer list-none p-2 border-b-2 border-transparent hover:bg-neutral-200 hover:border-neutral-400 hover:dark:bg-neutral-700 hover:dark:border-neutral-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.25 4.5A.75.75 0 0 1 3 3.75h14.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Zm0 4.5A.75.75 0 0 1 3 8.25h9.75a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 9Zm15-.75A.75.75 0 0 1 18 9v10.19l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3.75 3.75a.75.75 0 0 1-1.06 0l-3.75-3.75a.75.75 0 1 1 1.06-1.06l2.47 2.47V9a.75.75 0 0 1 .75-.75Zm-15 5.25a.75.75 0 0 1 .75-.75h9.75a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </summary>
+    <div
+      class="not-prose border border-neutral-400 dark:border-neutral-600 bg-white dark:bg-neutral-800 p-2 max-h-[calc(100vh-4rem)] overflow-y-scroll"
+    >
+      <p class="text-center">
+        <strong class="text-sm">Table of Contents</strong>
+      </p>
+      <ul>
+        {
+          headings
+            .filter(({ depth }) => depth === 2)
+            .map((heading) => (
+              <li>
+                <a
+                  class="text-center text-blue-800 dark:text-blue-300 block py-1 px-2 hover:underline"
+                  href={`#${heading.slug}`}
+                  aria-labelledby={`Section: ${heading.slug}`}
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </details>
+  <Content />
+</PageLayout>
+
+<script>
+  const setAnchorListener = () => {
+    const tocLinks = document.querySelectorAll(".toc a");
+
+    for (const link of tocLinks) {
+      link.addEventListener("click", () => {
+        document.querySelector(".toc")?.removeAttribute("open");
+      });
+    }
+  };
+
+  setAnchorListener();
+  document.addEventListener("astro:after-swap", setAnchorListener);
+</script>

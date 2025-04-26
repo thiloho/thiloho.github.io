@@ -1,0 +1,49 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  metaDescription: string;
+}
+
+const { title, metaDescription } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="THohlt" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <meta name="description" content={metaDescription} />
+  <ClientRouter />
+  <script is:inline>
+    const setTheme = () => {
+      let theme = "light";
+
+      if (localStorage.getItem("theme")) {
+        theme = localStorage.getItem("theme");
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        theme = "dark";
+      }
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+
+      window.localStorage.setItem("theme", theme);
+    };
+
+    setTheme();
+
+    document.addEventListener("astro:after-swap", setTheme);
+  </script>
+</head>

@@ -1,0 +1,31 @@
+---
+import Head from "../components/Head.astro";
+import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  metaDescription: string;
+  pubDate?: Date;
+  modDate?: Date;
+}
+
+const { title, metaDescription, pubDate, modDate } = Astro.props;
+---
+
+<html lang="en" class="light">
+  <Head {title} {metaDescription} />
+  <body class="min-h-screen flex flex-col">
+    <Nav />
+    <Header {title} {pubDate} {modDate} />
+    <main class="flex-1 bg-white dark:bg-neutral-800">
+      <div
+        class={`relative prose prose-neutral dark:prose-invert mx-auto px-4 ${pubDate ? "pt-0" : "pt-8"} pb-16 prose-headings:scroll-mt-16 prose-h1:font-bold prose-pre:!bg-neutral-700 prose-a:text-blue-800 prose-a:dark:text-blue-300 prose-a:hover:no-underline`}
+      >
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
