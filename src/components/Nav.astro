@@ -4,9 +4,9 @@ import Logo from "../img/TH.svg";
 const routes = ["blog"];
 ---
 
-<nav class="max-w-none bg-neutral-100 dark:bg-neutral-900 sticky top-0 z-10">
+<nav class="sticky top-0 z-10 max-w-none bg-neutral-100 dark:bg-neutral-900">
   <div
-    class="text-neutral-700 dark:text-neutral-300 flex items-center justify-between max-w-screen-lg mx-auto ps-4 pe-2"
+    class="mx-auto flex max-w-screen-lg items-center justify-between ps-4 pe-2 text-neutral-700 dark:text-neutral-300"
   >
     <a href="/" title="Home">
       <Logo width={42} height={42} />
@@ -15,7 +15,7 @@ const routes = ["blog"];
       {
         routes.map((route) => (
           <a
-            class="inline-block p-2 border-b-2 border-transparent hover:bg-neutral-200 hover:border-neutral-400 hover:dark:bg-neutral-700 hover:dark:border-neutral-600"
+            class="inline-block border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
             href={`/${route}`}
           >
             {route
@@ -26,7 +26,7 @@ const routes = ["blog"];
         ))
       }
       <button
-        class="theme-toggle p-2 cursor-pointer border-b-2 border-transparent hover:bg-neutral-200 hover:border-neutral-400 hover:dark:bg-neutral-700 hover:dark:border-neutral-600"
+        class="theme-toggle cursor-pointer border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
         title="Toggle dark mode"
       >
         <!-- Moon -->
@@ -47,7 +47,7 @@ const routes = ["blog"];
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          class="size-5 hidden dark:block"
+          class="hidden size-5 dark:block"
         >
           <path
             d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
@@ -55,7 +55,7 @@ const routes = ["blog"];
         </svg>
       </button>
       <a
-        class="inline-grid place-content-center p-2 cursor-pointer border-b-2 border-transparent hover:bg-neutral-200 hover:border-neutral-400 hover:dark:bg-neutral-700 hover:dark:border-neutral-600"
+        class="inline-grid cursor-pointer place-content-center border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
         title="RSS feed"
         href="/rss.xml"
       >
