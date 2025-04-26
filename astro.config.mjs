@@ -1,8 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import { remarkModifiedTime } from "./remark-modified-time.mjs";
 
 export default defineConfig({
+  site: "https://thiloho.github.io",
+
   prefetch: {
     prefetchAll: true,
   },
@@ -15,6 +16,5 @@ export default defineConfig({
     shikiConfig: {
       theme: "github-dark",
     },
-    remarkPlugins: [remarkModifiedTime],
   },
 });

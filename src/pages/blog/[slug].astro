@@ -17,14 +17,14 @@ if (!article) {
   throw new Error();
 }
 
-const { Content, headings, remarkPluginFrontmatter } = await render(article);
+const { Content, headings } = await render(article);
 ---
 
 <PageLayout
   title={article.data.title}
   metaDescription="Blog"
   pubDate={article.data.pubDate}
-  modDate={remarkPluginFrontmatter.lastModified}
+  modDate={article.data.modDate}
 >
   <details class="toc sticky top-0 z-20">
     <summary
