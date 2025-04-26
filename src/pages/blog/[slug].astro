@@ -22,9 +22,10 @@ const { Content, headings } = await render(article);
 
 <PageLayout
   title={article.data.title}
-  metaDescription="Blog"
+  description="Blog"
   pubDate={article.data.pubDate}
   modDate={article.data.modDate}
+  {slug}
 >
   <details class="toc sticky top-0 z-20">
     <summary

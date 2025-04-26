@@ -1,5 +1,4 @@
 ---
-id: 1
 title: "Steps to install NixOS on a system with ext4 and LUKS"
 description: "A guide to installing NixOS with full disk encryption using LUKS and LVM, showing the complete process from disk partitioning to system configuration"
 pubDate: "2025-01-04"

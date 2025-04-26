@@ -8,7 +8,6 @@ const index = defineCollection({
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
-    id: z.number().positive(),
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),

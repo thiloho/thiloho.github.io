@@ -10,8 +10,11 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@astrojs/rss": "4.0.11",
     "@tailwindcss/vite": "4.1.4",
     "astro": "5.7.5",
+    "markdown-it": "14.1.0",
+    "sanitize-html": "2.16.0",
     "tailwindcss": "4.1.4"
   },
   "devDependencies": {

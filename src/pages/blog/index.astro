@@ -9,11 +9,11 @@ const sortedArticles = allArticles.sort((a, b) => {
 });
 ---
 
-<PageLayout title="Blog" metaDescription="Blog">
+<PageLayout title="Blog" description="Blog">
   <ul>
     {
       sortedArticles.map((article) => (
-        <li class="gap-1">
+        <li class="flex gap-2">
           <Date date={article.data.pubDate} />
           <span>&raquo;</span>
           <a
