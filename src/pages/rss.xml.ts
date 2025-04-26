@@ -1,10 +1,11 @@
 import rss from "@astrojs/rss";
+import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
-export const GET = async (context) => {
+export const GET = async (context: APIContext) => {
   const blog = await getCollection("blog");
 
   const latestModDate = blog.reduce((latest, article) => {
@@ -15,18 +16,18 @@ export const GET = async (context) => {
   return rss({
     title: "Thilo Hohlt's Blog",
     description: "Thilo Hohlt's Blog",
-    site: context.site,
+    site: context.url.origin,
     trailingSlash: false,
     xmlns: {
       atom: "http://www.w3.org/2005/Atom",
     },
     customData: `
       <lastBuildDate>${latestModDate.toUTCString()}</lastBuildDate>
-      <atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="${context.url.origin}/rss.xml" rel="self" type="application/rss+xml" />
     `,
     items: blog.map((article) => ({
       link: `/blog/${article.id}/`,
-      content: sanitizeHtml(parser.render(article.body), {
+      content: sanitizeHtml(parser.render(article.body ?? ""), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
       ...article.data,
