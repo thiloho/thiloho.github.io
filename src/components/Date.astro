@@ -1,17 +1,29 @@
 ---
 interface Props {
-  date: Date;
+  date: Date | string;
 }
 
 const { date } = Astro.props;
+
+const isStringDate = typeof date === "string";
+const transformedDate = isStringDate ? new Date(date) : date;
+
+// Create the base options object
+const localeOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+// Conditionally add time options if it's a string date
+if (isStringDate) {
+  Object.assign(localeOptions, {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
 ---
 
-<time datetime={date.toISOString()}>
-  {
-    date.toLocaleString("en-us", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    })
-  }
+<time datetime={transformedDate.toISOString()}>
+  {transformedDate.toLocaleString("en-us", localeOptions)}
 </time>
