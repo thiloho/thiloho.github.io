@@ -1,0 +1,29 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+import Date from "../../components/Date.astro";
+
+const allArticles = await getCollection("blog");
+const sortedArticles = allArticles.sort((a, b) => {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+});
+---
+
+<PageLayout title="Blog" metaDescription="Blog">
+  <ul>
+    {
+      sortedArticles.map((article) => (
+        <li class="gap-1">
+          <Date date={article.data.pubDate} />
+          <span>&raquo;</span>
+          <a
+            class="text-blue-800 hover:no-underline"
+            href={`/blog/${article.id}`}
+          >
+            {article.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</PageLayout>
