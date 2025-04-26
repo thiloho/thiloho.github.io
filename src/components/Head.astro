@@ -4,10 +4,10 @@ import "../styles/global.css";
 
 interface Props {
   title: string;
-  metaDescription: string;
+  description: string;
 }
 
-const { title, metaDescription } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <head>
@@ -21,7 +21,14 @@ const { title, metaDescription } = Astro.props;
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <meta name="description" content={metaDescription} />
+  <meta name="description" content={description} />
+  <meta name="color-scheme" content="light dark" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Your Site's Title"
+    href={new URL("rss.xml", Astro.site)}
+  />
   <ClientRouter />
   <script is:inline>
     const setTheme = () => {

@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://thiloho.github.io",
 
+  trailingSlash: "never",
+
   prefetch: {
     prefetchAll: true,
   },

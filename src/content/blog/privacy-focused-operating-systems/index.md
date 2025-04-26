@@ -1,5 +1,4 @@
 ---
-id: 2
 title: "Privacy-focused operating systems"
 description: "Good choices for privacy-focused operating systems for desktop and mobile phones."
 pubDate: "2025-01-16"
