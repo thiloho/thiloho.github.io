@@ -22,7 +22,7 @@ const { title, pubDate, modDate } = Astro.props;
             Published: <Date date={pubDate} />
             <br />
             Last modified:{" "}
-            {modDate ? <Date date={modDate} /> : <span>No changes yet</span>}
+            {modDate ? <Date date={modDate} /> : <span>No modifications</span>}
           </p>
         </hgroup>
       ) : (
