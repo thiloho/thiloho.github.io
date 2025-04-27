@@ -6,7 +6,6 @@ import rehypeSlug from "rehype-slug";
 
 export default defineConfig({
   site: "https://thiloho.github.io",
-  trailingSlash: "never",
 
   prefetch: {
     prefetchAll: true,
