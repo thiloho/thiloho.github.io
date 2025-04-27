@@ -1,11 +1,11 @@
 import rss from "@astrojs/rss";
-import type { APIContext } from "astro";
+import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
-export const GET = async (context: APIContext) => {
+export const GET: APIRoute = async (context) => {
   const blog = await getCollection("blog");
 
   const latestModDate = blog.reduce((latest, article) => {
