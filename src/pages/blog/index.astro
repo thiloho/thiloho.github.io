@@ -9,7 +9,10 @@ const sortedArticles = allArticles.sort((a, b) => {
 });
 ---
 
-<PageLayout title="Blog" description="Blog">
+<PageLayout
+  title="Blog"
+  description="Friendly technical articles with a focus on web and GNU/Linux topics."
+>
   <ul>
     {
       sortedArticles.map((article) => (

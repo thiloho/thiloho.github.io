@@ -14,8 +14,9 @@ export const GET: APIRoute = async (context) => {
   }, new Date(0));
 
   return rss({
-    title: "Thilo Hohlt's Blog",
-    description: "Thilo Hohlt's Blog",
+    title: "Thilo Hohlt's blog",
+    description:
+      "Friendly technical articles with a focus on web and GNU/Linux topics.",
     site: context.url.origin,
     trailingSlash: false,
     xmlns: {

@@ -22,7 +22,7 @@ const { Content, headings } = await render(article);
 
 <PageLayout
   title={article.data.title}
-  description="Blog"
+  description={article.data.description}
   pubDate={article.data.pubDate}
   modDate={article.data.modDate}
   {slug}
