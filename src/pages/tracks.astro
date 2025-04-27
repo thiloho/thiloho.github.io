@@ -20,7 +20,7 @@ const processedAlbumCovers = albumCovers.map((cover) => {
     artists = artists.replaceAll("_", ",");
   }
 
-  return { cover, filename, artists, title };
+  return { cover, artists, title };
 });
 
 const sortedAlbumCovers = processedAlbumCovers.sort((a, b) =>
@@ -41,14 +41,14 @@ const sortedAlbumCovers = processedAlbumCovers.sort((a, b) =>
     class="not-prose relative start-1/2 -ms-[min(50vw-1rem,50ch)] grid max-w-[calc(min(100vw-2rem,100ch))] grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] place-content-center gap-4"
   >
     {
-      sortedAlbumCovers.map(({ cover, filename, artists, title }) => (
+      sortedAlbumCovers.map(({ cover, artists, title }) => (
         <figure>
           <a
             href={`https://music.youtube.com/search?q=${encodeURIComponent(`${title} - ${artists}`)}`}
           >
             <Image
               src={cover.default}
-              alt={`Cover for the song '${filename}'`}
+              alt={`Cover for the song '${title}' by artist(s) '${artists}'`}
               class="border border-neutral-400 duration-300 hover:scale-105 dark:border-neutral-500"
             />
           </a>
