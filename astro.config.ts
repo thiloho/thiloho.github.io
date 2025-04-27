@@ -5,7 +5,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 
 export default defineConfig({
-  site: "https://thiloho.github.io",
+  site: "https://thilohohlt.com",
 
   prefetch: {
     prefetchAll: true,
