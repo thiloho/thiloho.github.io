@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://thiloho.github.io",
-
   trailingSlash: "never",
 
   prefetch: {
@@ -19,4 +19,6 @@ export default defineConfig({
       theme: "github-dark",
     },
   },
+
+  integrations: [sitemap()],
 });

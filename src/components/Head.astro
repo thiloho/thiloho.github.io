@@ -26,9 +26,12 @@ const { title, description } = Astro.props;
   <link
     rel="alternate"
     type="application/rss+xml"
-    title="Your Site's Title"
-    href={new URL("rss.xml", Astro.site)}
+    title="Thilo Hohlt's Blog"
+    href={new URL("rss.xml", Astro.url.origin)}
   />
+  <head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
   <ClientRouter />
   <script is:inline>
     const setTheme = () => {
