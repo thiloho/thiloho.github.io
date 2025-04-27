@@ -7,19 +7,17 @@ const albumCovers = await Astro.glob("../content/album-covers/*");
 
 const processedAlbumCovers = albumCovers.map((cover) => {
   const filePathWithoutParams = cover.default.src.split("?")[0];
-
   const filename = parse(filePathWithoutParams).name;
 
   const lastDashIndex = filename.lastIndexOf(" - ");
 
-  const artists =
+  let artists =
     lastDashIndex !== -1 ? filename.substring(0, lastDashIndex) : filename;
-
   let title = lastDashIndex !== -1 ? filename.substring(lastDashIndex + 3) : "";
 
   if (import.meta.env.PROD) {
-    const lastDotIndex = filename.lastIndexOf(".");
-    title = lastDotIndex !== -1 ? filename.substring(0, lastDotIndex) : "";
+    title = title.replace(/\..{8}$/, "");
+    artists = artists.replaceAll("_", ",");
   }
 
   return { cover, filename, artists, title };
@@ -46,7 +44,7 @@ const sortedAlbumCovers = processedAlbumCovers.sort((a, b) =>
       sortedAlbumCovers.map(({ cover, filename, artists, title }) => (
         <figure>
           <a
-            href={`https://music.youtube.com/search?q=${encodeURIComponent(filename)}`}
+            href={`https://music.youtube.com/search?q=${encodeURIComponent(`${title} - ${artists}`)}`}
           >
             <Image
               src={cover.default}
