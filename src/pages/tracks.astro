@@ -8,18 +8,20 @@ const albumCovers = await Astro.glob("../content/album-covers/*");
 const processedAlbumCovers = albumCovers.map((cover) => {
   const filePathWithoutParams = cover.default.src.split("?")[0];
 
-  let filename = parse(filePathWithoutParams).name;
-
-  const lastDotIndex = filename.lastIndexOf(".");
-  if (lastDotIndex !== -1) {
-    filename = filename.substring(0, lastDotIndex);
-  }
+  const filename = parse(filePathWithoutParams).name;
 
   const lastDashIndex = filename.lastIndexOf(" - ");
+
   const artists =
     lastDashIndex !== -1 ? filename.substring(0, lastDashIndex) : filename;
-  const title =
-    lastDashIndex !== -1 ? filename.substring(lastDashIndex + 3) : "";
+
+  let title = lastDashIndex !== -1 ? filename.substring(lastDashIndex + 3) : "";
+
+  const lastDotIndex = title.lastIndexOf(".");
+
+  if (lastDotIndex !== -1 && import.meta.env.PROD) {
+    title = filename.substring(0, lastDotIndex);
+  }
 
   return { cover, filename, artists, title };
 });
