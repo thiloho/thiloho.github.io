@@ -17,10 +17,9 @@ const processedAlbumCovers = albumCovers.map((cover) => {
 
   let title = lastDashIndex !== -1 ? filename.substring(lastDashIndex + 3) : "";
 
-  const lastDotIndex = title.lastIndexOf(".");
-
-  if (lastDotIndex !== -1 && import.meta.env.PROD) {
-    title = filename.substring(0, lastDotIndex);
+  if (import.meta.env.PROD) {
+    const lastDotIndex = filename.lastIndexOf(".");
+    title = lastDotIndex !== -1 ? filename.substring(0, lastDotIndex) : "";
   }
 
   return { cover, filename, artists, title };
