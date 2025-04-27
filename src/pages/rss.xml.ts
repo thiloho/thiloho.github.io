@@ -18,7 +18,6 @@ export const GET: APIRoute = async (context) => {
     description:
       "Friendly technical articles with a focus on web and GNU/Linux topics.",
     site: context.url.origin,
-    trailingSlash: false,
     xmlns: {
       atom: "http://www.w3.org/2005/Atom",
     },
