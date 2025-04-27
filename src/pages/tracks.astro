@@ -1,0 +1,58 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { parse } from "node:path";
+
+const albumCovers = await Astro.glob("../content/album-covers/*");
+
+const processedAlbumCovers = albumCovers.map((cover) => {
+  const filePathWithoutParams = cover.default.src.split("?")[0];
+  const filename = parse(filePathWithoutParams).name;
+
+  const lastDashIndex = filename.lastIndexOf(" - ");
+  const artists =
+    lastDashIndex !== -1 ? filename.substring(0, lastDashIndex) : filename;
+  const title =
+    lastDashIndex !== -1 ? filename.substring(lastDashIndex + 3) : "";
+
+  return { cover, filename, artists, title };
+});
+
+const sortedAlbumCovers = processedAlbumCovers.sort((a, b) =>
+  a.title.localeCompare(b.title),
+);
+---
+
+<PageLayout
+  title="Tracks"
+  description="Collection of some of my favourite music tracks."
+>
+  <p class="mb-16">
+    This is a collection of some of my favourite music tracks, each listed by
+    artist and song title. Click on an album cover to go straight to the song on
+    YouTube Music!
+  </p>
+  <div
+    class="not-prose relative start-1/2 end-1/2 -ms-[30vw] -me-[30vw] grid w-[60vw] max-w-[100vw] grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] place-content-center gap-8"
+  >
+    {
+      sortedAlbumCovers.map(({ cover, filename, artists, title }) => (
+        <figure>
+          <a
+            href={`https://music.youtube.com/search?q=${encodeURIComponent(filename)}`}
+          >
+            <Image
+              src={cover.default}
+              alt={`Cover for the song '${filename}'`}
+              class="border border-neutral-400 duration-300 hover:scale-105 dark:border-neutral-500"
+            />
+          </a>
+          <figcaption class="flex flex-col p-4 text-center">
+            <p class="text-lg font-bold">{title}</p>
+            <p>{artists}</p>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</PageLayout>
