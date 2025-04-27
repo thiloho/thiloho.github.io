@@ -2,6 +2,7 @@
 title: "Steps to install NixOS on a system with ext4 and LUKS"
 description: "A guide to installing NixOS with full disk encryption using LUKS and LVM, showing the complete process from disk partitioning to system configuration."
 pubDate: "2025-01-04"
+modDate: "2025-04-27"
 ---
 
 ## Disk layout
@@ -18,7 +19,7 @@ sda             8:0    0 233.8G  0 disk
 
 ## Partitioning
 
-```
+```sh
 parted /dev/sda -- mklabel gpt
 
 parted /dev/sda -- mkpart ESP fat32 1MB 512MB
@@ -30,7 +31,7 @@ parted /dev/sda -- set 1 esp on
 
 ## Setting up Encryption
 
-```
+```sh
 cryptsetup luksFormat /dev/sda2
 
 cryptsetup luksOpen /dev/sda2 cryptroot
@@ -38,7 +39,7 @@ cryptsetup luksOpen /dev/sda2 cryptroot
 
 ## Setting up LVM
 
-```
+```sh
 pvcreate /dev/mapper/cryptroot
 
 vgcreate vg /dev/mapper/cryptroot
@@ -50,7 +51,7 @@ lvcreate -l 100%FREE vg -n root
 
 ## Creating Filesystems
 
-```
+```sh
 mkfs.fat -F 32 -n boot /dev/sda1
 
 mkfs.ext4 -L root /dev/vg/root
@@ -60,7 +61,7 @@ mkswap -L swap /dev/vg/swap
 
 ## Mounting Filesystems
 
-```
+```sh
 mount /dev/vg/root /mnt
 
 mkdir -p /mnt/boot
@@ -105,7 +106,7 @@ Edit `/mnt/etc/nixos/configuration.nix`:
 
 ## Installation
 
-```
+```sh
 nixos-install
 
 reboot
