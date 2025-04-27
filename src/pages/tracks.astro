@@ -38,7 +38,7 @@ const sortedAlbumCovers = processedAlbumCovers.sort((a, b) =>
     YouTube Music!
   </p>
   <div
-    class="not-prose relative start-1/2 end-1/2 -ms-[30vw] -me-[30vw] grid w-[60vw] max-w-[100vw] grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] place-content-center gap-8"
+    class="not-prose relative start-1/2 end-1/2 -ms-[min(50vw-1rem,65ch)] -me-[min(50vw-1rem,65ch)] grid w-[100vw] max-w-[calc(min(100vw-2rem,130ch))] grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] place-content-center gap-8"
   >
     {
       sortedAlbumCovers.map(({ cover, filename, artists, title }) => (
