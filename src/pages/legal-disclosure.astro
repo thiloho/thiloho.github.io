@@ -1,14 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { getEntry, render } from "astro:content";
-
-const legalContent = await getEntry("legal", "legal");
-
-if (!legalContent) {
-  throw new Error();
-}
-
-const { Content } = await render(legalContent);
+import { Content } from "../content/legal-disclosure.md";
 ---
 
 <PageLayout
