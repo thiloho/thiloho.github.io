@@ -7,10 +7,13 @@ const albumCovers = await Astro.glob("../content/album-covers/*");
 
 const processedAlbumCovers = albumCovers.map((cover) => {
   const filePathWithoutParams = cover.default.src.split("?")[0];
-  const filename = parse(filePathWithoutParams).name.replace(
-    /\.[a-zA-Z0-9]+$/,
-    "",
-  );
+
+  let filename = parse(filePathWithoutParams).name;
+
+  const lastDotIndex = filename.lastIndexOf(".");
+  if (lastDotIndex !== -1) {
+    filename = filename.substring(0, lastDotIndex);
+  }
 
   const lastDashIndex = filename.lastIndexOf(" - ");
   const artists =
