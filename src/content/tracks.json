@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "title": "And So It Was",
+    "youtubeLink": "https://www.youtube.com/watch?v=xf7iQ5YtvxQ",
+    "artist": "Black Smurf",
+    "album": "Black Smurf, Vol. 2",
+    "cover": "/src/content/album-covers/Black Smurf - And So It Was.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Clouds",
+    "youtubeLink": "https://www.youtube.com/watch?v=CNbzyHDxdTs",
+    "artist": "Miscél, Hanz",
+    "album": "The Other Side",
+    "cover": "/src/content/album-covers/Miscél, Hanz - Clouds.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Desire",
+    "youtubeLink": "https://www.youtube.com/watch?v=VQEhIQxvRXQ",
+    "artist": "BOCIGE, DYLAN",
+    "album": "Desire",
+    "cover": "/src/content/album-covers/BOCIGE, DYLAN - Desire.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Destiny",
+    "youtubeLink": "https://www.youtube.com/watch?v=p-7_FSwTGs4",
+    "artist": "NEFFEX",
+    "album": "Destiny: The Collection",
+    "cover": "/src/content/album-covers/NEFFEX - Destiny.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "DREAMIN",
+    "youtubeLink": "https://www.youtube.com/watch?v=Ns07wmgL8dY",
+    "artist": "SLIGHT",
+    "album": "SLIGHT COLLECTION VOL. 1",
+    "cover": "/src/content/album-covers/SLIGHT - DREAMIN.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Ewig",
+    "youtubeLink": "https://www.youtube.com/watch?v=yYHSwBXzD84",
+    "artist": "makko",
+    "album": "Lieb mich oder lass es, Pt.1+2",
+    "cover": "/src/content/album-covers/makko - Ewig.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Festnetz",
+    "youtubeLink": "https://www.youtube.com/watch?v=5GXUEJsYVRA",
+    "artist": "Dead Dawg, BHZ, Monk",
+    "album": "Festnetz",
+    "cover": "/src/content/album-covers/Dead Dawg, BHZ, Monk - Festnetz.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "hide",
+    "youtubeLink": "https://www.youtube.com/watch?v=O6jx0yVB5O4",
+    "artist": "arya x",
+    "album": "hide",
+    "cover": "/src/content/album-covers/arya x - hide.jpeg"
+  },
+  {
+    "id": 9,
+    "title": "Jinzo",
+    "youtubeLink": "https://www.youtube.com/watch?v=q83S-l9NrMA",
+    "artist": "YFG Pave",
+    "album": "Jinzo",
+    "cover": "/src/content/album-covers/YFG Pave - Jinzo.jpeg"
+  },
+  {
+    "id": 10,
+    "title": "lights in a hall",
+    "youtubeLink": "https://www.youtube.com/watch?v=2D60wMAOF_E",
+    "artist": "Beamon",
+    "album": "LIGHTS IN A HALL",
+    "cover": "/src/content/album-covers/Beamon - lights in a hall.jpeg"
+  },
+  {
+    "id": 11,
+    "title": "Lost In Da Wind",
+    "youtubeLink": "https://www.youtube.com/watch?v=DNUwhgqCI9U",
+    "artist": "Jgrxxn, Lil Xav",
+    "album": "Lost In Da Wind",
+    "cover": "/src/content/album-covers/Jgrxxn, Lil Xav - Lost In Da Wind.jpeg"
+  },
+  {
+    "id": 12,
+    "title": "Miracle",
+    "youtubeLink": "https://www.youtube.com/watch?v=ba4MlsG_Ce8",
+    "artist": "Calvin Harris, Ellie Goulding",
+    "album": "Miracle",
+    "cover": "/src/content/album-covers/Calvin Harris, Ellie Goulding - Miracle.jpeg"
+  },
+  {
+    "id": 13,
+    "title": "My Girl",
+    "youtubeLink": "https://www.youtube.com/watch?v=lC5UbInswAs",
+    "artist": "ilyTOMMY",
+    "album": "My Girl",
+    "cover": "/src/content/album-covers/ilyTOMMY - My Girl.jpeg"
+  },
+  {
+    "id": 14,
+    "title": "Sweet Child O' Mine",
+    "youtubeLink": "https://www.youtube.com/watch?v=oMfMUfgjiLg",
+    "artist": "Guns N' Roses",
+    "album": "Appetite For Destruction",
+    "cover": "/src/content/album-covers/Guns N' Roses - Sweet Child O' Mine.jpeg"
+  },
+  {
+    "id": 15,
+    "title": "Ticket nach Ketama",
+    "youtubeLink": "https://www.youtube.com/watch?v=aNVkkJmwAYE",
+    "artist": "ARY, Liaze",
+    "album": "Ticket nach Ketama",
+    "cover": "/src/content/album-covers/ARY, Liaze - Ticket nach Ketama.jpeg"
+  },
+  {
+    "id": 16,
+    "title": "Too Lost To Be Found",
+    "youtubeLink": "https://www.youtube.com/watch?v=G9G_T3NWqf0",
+    "artist": "CH4YN",
+    "album": "Too Lost To Be Found",
+    "cover": "/src/content/album-covers/CH4YN - Too Lost To Be Found.jpeg"
+  },
+  {
+    "id": 17,
+    "title": "Toronto 2014",
+    "youtubeLink": "https://www.youtube.com/watch?v=RaaccfAJiOo",
+    "artist": "Daniel Caesar, Mustafa",
+    "album": "NEVER ENOUGH",
+    "cover": "/src/content/album-covers/Daniel Caesar, Mustafa - Toronto 2014.jpeg"
+  },
+  {
+    "id": 18,
+    "title": "Underworld",
+    "youtubeLink": "https://www.youtube.com/watch?v=wRoJ4Wp7phU",
+    "artist": "GDS, Juice Wrld",
+    "album": "Moonlight",
+    "cover": "/src/content/album-covers/GDS, Juice Wrld - Underworld.jpeg"
+  },
+  {
+    "id": 19,
+    "title": "vice city",
+    "youtubeLink": "https://www.youtube.com/watch?v=yf5Y20Ls7WE",
+    "artist": "XXXTENTACION",
+    "album": "vice city",
+    "cover": "/src/content/album-covers/XXXTENTACION - vice city.jpeg"
+  },
+  {
+    "id": 20,
+    "title": "War Clips",
+    "youtubeLink": "https://www.youtube.com/watch?v=dxu0N7mz5Ok",
+    "artist": "Motat",
+    "album": "War Clips",
+    "cover": "/src/content/album-covers/Motat - War Clips.jpeg"
+  },
+  {
+    "id": 21,
+    "title": "Weather Man",
+    "youtubeLink": "https://www.youtube.com/watch?v=4BFCN7dg51E",
+    "artist": "Xavier Wulf, Bones",
+    "album": "Caves",
+    "cover": "/src/content/album-covers/Xavier Wulf, Bones - Weather Man.jpeg"
+  }
+]
