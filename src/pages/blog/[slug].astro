@@ -51,19 +51,25 @@ const { Content, headings } = await render(article);
       </p>
       <ul>
         {
-          headings
-            .filter(({ depth }) => depth === 2)
-            .map((heading) => (
-              <li>
-                <a
-                  class="block px-2 py-1 text-center text-blue-800 hover:underline dark:text-blue-300"
-                  href={`#${heading.slug}`}
-                  aria-labelledby={`Section: ${heading.slug}`}
-                >
-                  {heading.text}
-                </a>
-              </li>
-            ))
+          headings.length ? (
+            headings
+              .filter(({ depth }) => depth === 2)
+              .map((heading) => (
+                <li>
+                  <a
+                    class="block px-2 py-1 text-center text-blue-800 hover:underline dark:text-blue-300"
+                    href={`#${heading.slug}`}
+                    aria-labelledby={`Section: ${heading.slug}`}
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))
+          ) : (
+            <p class="text-center text-red-800 dark:text-red-300">
+              No headings to generate entries for yet
+            </p>
+          )
         }
       </ul>
     </div>
