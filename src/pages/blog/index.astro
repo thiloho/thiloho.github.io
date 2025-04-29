@@ -13,9 +13,21 @@ const sortedArticles = allArticles.sort((a, b) => {
   title="Blog"
   description="Friendly technical articles with a focus on web and GNU/Linux topics."
 >
+  <form class="flex flex-wrap gap-2">
+    <label for="article-search">Search for an article:</label>
+    <input
+      type="text"
+      id="article-search"
+      class="border border-neutral-300 px-2 dark:border-neutral-600"
+    />
+  </form>
   {
     sortedArticles.map(({ id, data: { title, pubDate, description } }) => (
-      <article class="mt-8 flex flex-col gap-2 first:mt-0">
+      <article
+        class="mt-8 flex flex-col gap-2"
+        data-article-title={title}
+        data-article-description={description}
+      >
         <Date date={pubDate} />
         <a
           class="max-w-fit text-blue-800 hover:no-underline active:bg-neutral-200 active:dark:bg-neutral-700"
@@ -27,4 +39,52 @@ const sortedArticles = allArticles.sort((a, b) => {
       </article>
     ))
   }
+  <p id="no-results" class="mt-8 hidden italic">
+    No articles found matching your search.
+  </p>
 </PageLayout>
+
+<script>
+  const setupSearch = () => {
+    const searchInput = document.querySelector('input[id="article-search"]');
+    const articles = document.querySelectorAll("[data-article-title]");
+    const noResults = document.querySelector("#no-results");
+
+    if (!searchInput || !articles.length || !noResults) return;
+
+    searchInput.addEventListener("input", (e) => {
+      const target = e.target as HTMLInputElement;
+      const searchTerm = target.value
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase()
+        .split(" ");
+
+      let hasResults = false;
+
+      for (const article of articles) {
+        const title = article.getAttribute("data-article-title") ?? "";
+        const description =
+          article.getAttribute("data-article-description") ?? "";
+
+        const matchesSearch = searchTerm.every(
+          (word) =>
+            title.toLowerCase().includes(word) ||
+            description.toLowerCase().includes(word),
+        );
+
+        if (matchesSearch) {
+          (article as HTMLElement).classList.remove("hidden");
+          hasResults = true;
+        } else {
+          (article as HTMLElement).classList.add("hidden");
+        }
+      }
+
+      noResults.classList.toggle("hidden", hasResults);
+    });
+  };
+
+  setupSearch();
+  document.addEventListener("astro:after-swap", setupSearch);
+</script>
