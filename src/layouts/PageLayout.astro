@@ -22,7 +22,7 @@ const { title, description, pubDate, modDate, slug } = Astro.props;
     <Header {title} {pubDate} {modDate} {slug} />
     <main class="flex-1 bg-white dark:bg-neutral-800">
       <div
-        class={`relative prose prose-neutral dark:prose-invert mx-auto px-4 ${pubDate ? "pt-0" : "pt-8"} pb-16 ${Astro.originPathname === "/" ? "prose-headings:scroll-mt-12" : "prose-headings:scroll-mt-24 lg:prose-headings:scroll-mt-16"} prose-h1:font-bold prose-pre:!bg-neutral-700 prose-a:not-in-prose-headings:text-blue-800 prose-a:not-in-prose-headings:dark:text-blue-300 prose-a:hover:no-underline prose-a:active:bg-neutral-100 prose-a:active:dark:bg-neutral-700 prose-a:in-prose-headings:font-bold prose-a:in-prose-headings:decoration-2 prose-a:in-prose-headings:no-underline prose-a:in-prose-headings:hover:underline`}
+        class={`relative prose prose-neutral dark:prose-invert mx-auto px-4 ${pubDate ? "pt-0" : "pt-8"} pb-16 ${Astro.originPathname === "/" ? "prose-headings:scroll-mt-12" : "prose-headings:scroll-mt-24 lg:prose-headings:scroll-mt-16"} prose-h1:font-bold prose-pre:!bg-neutral-700 prose-a:not-in-prose-headings:text-blue-800 prose-a:not-in-prose-headings:dark:text-blue-300 prose-a:hover:no-underline prose-a:active:bg-neutral-200 prose-a:active:dark:bg-neutral-700 prose-a:in-prose-headings:font-bold prose-a:in-prose-headings:decoration-2 prose-a:in-prose-headings:no-underline prose-a:in-prose-headings:hover:underline`}
       >
         <slot />
       </div>
