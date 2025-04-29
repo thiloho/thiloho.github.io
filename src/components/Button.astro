@@ -3,14 +3,14 @@ interface Props {
   href?: string;
   variant?: "text" | "icon";
   title?: string;
-  class?: string;
+  id?: string;
 }
 
-const { href, variant = "text", title, class: className = "" } = Astro.props;
+const { href, variant = "text", title, id } = Astro.props;
 
 const baseClasses =
   "border-transparent border-b-2 p-2 cursor-pointer hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700 active:bg-neutral-200 active:dark:bg-neutral-700 active:border-neutral-300 active:dark:border-neutral-600";
-const classes = `${baseClasses} ${variant === "icon" && href ? "inline-grid place-content-center" : "inline-block"} ${className}`;
+const classes = `${baseClasses} ${variant === "icon" && href ? "inline-grid place-content-center" : "inline-block"}`;
 ---
 
 {
@@ -19,7 +19,7 @@ const classes = `${baseClasses} ${variant === "icon" && href ? "inline-grid plac
       <slot />
     </a>
   ) : (
-    <button class={classes} title={title}>
+    <button {id} class={classes} title={title}>
       <slot />
     </button>
   )
