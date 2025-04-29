@@ -18,16 +18,12 @@ if (!article) {
   throw new Error();
 }
 
+const { title, description, pubDate, modDate } = article.data;
+
 const { Content, headings } = await render(article);
 ---
 
-<PageLayout
-  title={article.data.title}
-  description={article.data.description}
-  pubDate={article.data.pubDate}
-  modDate={article.data.modDate}
-  {slug}
->
+<PageLayout {title} {description} {pubDate} {modDate} {slug}>
   <TableOfContents {headings} />
   <Content />
 </PageLayout>
