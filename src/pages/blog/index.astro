@@ -18,7 +18,7 @@ const sortedArticles = allArticles.sort((a, b) => {
       <article class="mt-8 flex flex-col gap-2 first:mt-0">
         <Date date={pubDate} />
         <a
-          class="max-w-fit text-blue-800 hover:no-underline"
+          class="max-w-fit text-blue-800 hover:no-underline active:bg-blue-100 active:dark:bg-blue-900"
           href={`/blog/${id}`}
         >
           {title}
