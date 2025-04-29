@@ -27,14 +27,14 @@ const { headings } = Astro.props;
         headings.length ? (
           headings
             .filter(({ depth }) => depth === 2)
-            .map((heading) => (
+            .map(({ slug, text }) => (
               <li>
                 <a
                   class="block px-2 py-1 text-center text-blue-800 hover:underline dark:text-blue-300"
-                  href={`#${heading.slug}`}
-                  aria-labelledby={`Section: ${heading.slug}`}
+                  href={`#${slug}`}
+                  aria-labelledby={`Section: ${slug}`}
                 >
-                  {heading.text}
+                  {text}
                 </a>
               </li>
             ))

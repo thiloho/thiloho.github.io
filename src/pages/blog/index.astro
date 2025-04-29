@@ -15,15 +15,12 @@ const sortedArticles = allArticles.sort((a, b) => {
 >
   <ul>
     {
-      sortedArticles.map((article) => (
+      sortedArticles.map(({ id, data: { title, pubDate } }) => (
         <li>
-          <Date date={article.data.pubDate} />
+          <Date date={pubDate} />
           <span>&raquo;</span>
-          <a
-            class="text-blue-800 hover:no-underline"
-            href={`/blog/${article.id}`}
-          >
-            {article.data.title}
+          <a class="text-blue-800 hover:no-underline" href={`/blog/${id}`}>
+            {title}
           </a>
         </li>
       ))

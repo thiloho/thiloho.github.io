@@ -25,12 +25,12 @@ export const GET: APIRoute = async (context) => {
       <lastBuildDate>${latestModDate.toUTCString()}</lastBuildDate>
       <atom:link href="${context.url.origin}/rss.xml" rel="self" type="application/rss+xml" />
     `,
-    items: blog.map((article) => ({
-      link: `/blog/${article.id}/`,
-      content: sanitizeHtml(parser.render(article.body ?? ""), {
+    items: blog.map(({ id, body, data }) => ({
+      link: `/blog/${id}/`,
+      content: sanitizeHtml(parser.render(body ?? ""), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
-      ...article.data,
+      ...data,
     })),
   });
 };
