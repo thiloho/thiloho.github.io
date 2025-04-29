@@ -1,5 +1,7 @@
 ---
 import Logo from "../content/TH.svg";
+import Icon from "./Icon.astro";
+import Button from "./Button.astro";
 
 const routes = ["blog", "tracks"];
 ---
@@ -14,66 +16,21 @@ const routes = ["blog", "tracks"];
     <div class="flex">
       {
         routes.map((route) => (
-          <a
-            class="inline-block border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
-            href={`/${route}`}
-          >
+          <Button href={`/${route}`}>
             {route
               .split(" ")
               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
               .join(" ")}
-          </a>
+          </Button>
         ))
       }
-      <button
-        class="theme-toggle cursor-pointer border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
-        title="Toggle dark mode"
-      >
-        <!-- Moon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="size-5 dark:hidden"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z"
-            clip-rule="evenodd"></path>
-        </svg>
-
-        <!-- Sun -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="hidden size-5 dark:block"
-        >
-          <path
-            d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"
-          ></path>
-        </svg>
-      </button>
-      <a
-        class="inline-grid cursor-pointer place-content-center border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
-        title="RSS feed"
-        href="/rss.xml"
-      >
-        <!-- RSS -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="size-5"
-        >
-          <path
-            d="M3.75 3a.75.75 0 0 0-.75.75v.5c0 .414.336.75.75.75H4c6.075 0 11 4.925 11 11v.25c0 .414.336.75.75.75h.5a.75.75 0 0 0 .75-.75V16C17 8.82 11.18 3 4 3h-.25Z"
-          ></path>
-          <path
-            d="M3 8.75A.75.75 0 0 1 3.75 8H4a8 8 0 0 1 8 8v.25a.75.75 0 0 1-.75.75h-.5a.75.75 0 0 1-.75-.75V16a6 6 0 0 0-6-6h-.25A.75.75 0 0 1 3 9.25v-.5ZM7 15a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
-          ></path>
-        </svg>
-      </a>
+      <Button variant="icon" title="Toggle dark mode" class="theme-toggle">
+        <Icon name="moon" class="dark:hidden" />
+        <Icon name="sun" class="hidden dark:block" />
+      </Button>
+      <Button variant="icon" href="/rss.xml" title="RSS feed">
+        <Icon name="rss" />
+      </Button>
     </div>
   </div>
 </nav>

@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  artist: string;
+  album: string;
+  youtubeLink: string;
+  cover: any;
+}
+
+const { title, artist, album, youtubeLink, cover } = Astro.props;
+---
+
+<figure>
+  <a href={youtubeLink}>
+    <Image
+      src={cover}
+      alt={`Cover for the song '${title}' by artist(s) '${artist}'`}
+      class="border border-neutral-400 duration-300 hover:scale-105 dark:border-neutral-500"
+    />
+  </a>
+  <figcaption class="flex flex-col p-4 text-center">
+    <p class="text-lg font-bold">{title}</p>
+    <p>{artist}</p>
+    <p class="text-sm">{album}</p>
+  </figcaption>
+</figure>
