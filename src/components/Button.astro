@@ -1,0 +1,26 @@
+---
+interface Props {
+  href?: string;
+  variant?: "text" | "icon";
+  title?: string;
+  class?: string;
+}
+
+const { href, variant = "text", title, class: className = "" } = Astro.props;
+
+const baseClasses =
+  "border-transparent inline-block border-b-2 p-2 cursor-pointer hover:border-neutral-300 hover:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700";
+const classes = `${baseClasses} ${variant === "icon" && href ? "inline-grid place-content-center" : ""} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes} title={title}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} title={title}>
+      <slot />
+    </button>
+  )
+}

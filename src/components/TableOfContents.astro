@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+---
+
+<details
+  class="toc sticky top-10 z-10 -translate-y-px border border-neutral-300 bg-white lg:top-2 dark:border-neutral-600 dark:bg-neutral-800"
+>
+  <summary
+    title="Table of contents"
+    class="mx-auto flex w-fit cursor-pointer list-none border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700"
+  >
+    <Icon name="book" />
+  </summary>
+  <div class="not-prose max-h-[calc(100vh-8rem)] overflow-y-scroll p-2">
+    <p class="text-center">
+      <strong class="text-sm">Table of Contents</strong>
+    </p>
+    <ul>
+      {
+        headings.length ? (
+          headings
+            .filter(({ depth }) => depth === 2)
+            .map((heading) => (
+              <li>
+                <a
+                  class="block px-2 py-1 text-center text-blue-800 hover:underline dark:text-blue-300"
+                  href={`#${heading.slug}`}
+                  aria-labelledby={`Section: ${heading.slug}`}
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))
+        ) : (
+          <p class="text-center text-red-800 dark:text-red-300">
+            No headings to generate entries for yet
+          </p>
+        )
+      }
+    </ul>
+  </div>
+</details>
