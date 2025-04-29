@@ -24,7 +24,7 @@ const routes = ["blog", "tracks"];
           </Button>
         ))
       }
-      <Button variant="icon" title="Toggle dark mode" class="theme-toggle">
+      <Button id="theme-toggle" variant="icon" title="Toggle dark mode">
         <Icon name="moon" class="dark:hidden" />
         <Icon name="sun" class="hidden dark:block" />
       </Button>
@@ -37,7 +37,7 @@ const routes = ["blog", "tracks"];
 
 <script>
   const setToggleListener = () => {
-    const toggleBtn = document.querySelector(".theme-toggle");
+    const toggleBtn = document.querySelector("#theme-toggle");
 
     toggleBtn?.addEventListener("click", () => {
       const element = document.documentElement;

@@ -30,11 +30,11 @@ const { Content, headings } = await render(article);
 
 <script>
   const setAnchorListener = () => {
-    const tocLinks = document.querySelectorAll(".toc a");
+    const tocLinks = document.querySelectorAll("#toc a");
 
     for (const link of tocLinks) {
       link.addEventListener("click", () => {
-        document.querySelector(".toc")?.removeAttribute("open");
+        document.querySelector("#toc")?.removeAttribute("open");
       });
     }
   };
