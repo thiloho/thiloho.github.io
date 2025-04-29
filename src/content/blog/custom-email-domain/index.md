@@ -1,7 +1,8 @@
 ---
 title: "Custom email domain"
-description: "Find out how having your own email domain can save you a lot of time when switching email providers."
+description: "Find out how having your own domain can save you a lot of time when switching email providers."
 pubDate: "2025-04-28"
+modDate: "2025-04-29"
 ---
 
 ## Introduction
