@@ -14,7 +14,7 @@ const { headings } = Astro.props;
 >
   <summary
     title="Table of contents"
-    class="mx-auto flex w-fit cursor-pointer list-none border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 active:border-neutral-300 active:bg-neutral-100 hover:dark:border-neutral-600 hover:dark:bg-neutral-700 active:dark:border-neutral-600 active:dark:bg-neutral-700"
+    class="mx-auto flex w-fit cursor-pointer list-none border-b-2 border-transparent p-2 hover:border-neutral-300 hover:bg-neutral-100 active:border-neutral-300 active:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700 active:dark:border-neutral-600 active:dark:bg-neutral-700"
   >
     <Icon name="book" />
   </summary>
@@ -30,7 +30,7 @@ const { headings } = Astro.props;
             .map(({ slug, text }) => (
               <li>
                 <a
-                  class="block px-2 py-1 text-center text-blue-800 hover:underline active:bg-neutral-100 dark:text-blue-300 active:dark:bg-neutral-700"
+                  class="block px-2 py-1 text-center text-blue-800 hover:underline active:bg-neutral-200 dark:text-blue-300 active:dark:bg-neutral-700"
                   href={`#${slug}`}
                   aria-labelledby={`Section: ${slug}`}
                 >
