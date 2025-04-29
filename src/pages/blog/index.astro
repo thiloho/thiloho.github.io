@@ -13,17 +13,18 @@ const sortedArticles = allArticles.sort((a, b) => {
   title="Blog"
   description="Friendly technical articles with a focus on web and GNU/Linux topics."
 >
-  <ul>
-    {
-      sortedArticles.map(({ id, data: { title, pubDate } }) => (
-        <li>
-          <Date date={pubDate} />
-          <span>&raquo;</span>
-          <a class="text-blue-800 hover:no-underline" href={`/blog/${id}`}>
-            {title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    sortedArticles.map(({ id, data: { title, pubDate, description } }) => (
+      <article class="mt-8 flex flex-col gap-2 first:mt-0">
+        <Date date={pubDate} />
+        <a
+          class="max-w-fit text-blue-800 hover:no-underline"
+          href={`/blog/${id}`}
+        >
+          {title}
+        </a>
+        <p class="not-prose">{description}</p>
+      </article>
+    ))
+  }
 </PageLayout>
