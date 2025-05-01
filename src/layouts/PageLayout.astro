@@ -15,7 +15,7 @@ interface Props {
 const { title, description, pubDate, modDate, slug } = Astro.props;
 ---
 
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" transition:animate="none">
   <Head {title} {description} />
   <body class="flex min-h-screen flex-col">
     <Nav />
