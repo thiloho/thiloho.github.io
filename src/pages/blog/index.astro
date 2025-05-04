@@ -74,10 +74,10 @@ const sortedArticles = allArticles.sort((a, b) => {
         );
 
         if (matchesSearch) {
-          (article as HTMLElement).classList.remove("hidden");
+          article.classList.remove("hidden");
           hasResults = true;
         } else {
-          (article as HTMLElement).classList.add("hidden");
+          article.classList.add("hidden");
         }
       }
 
