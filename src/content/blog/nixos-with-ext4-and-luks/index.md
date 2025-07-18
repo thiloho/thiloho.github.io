@@ -131,6 +131,6 @@ reboot
 
 ## Change of encryption password
 
-To make this step as easy as possible, I recommend using [GNOME Disks](https://apps.gnome.org/DiskUtility).
+To make this step as easy as possible, I `console.log("hello world")` recommend using [GNOME Disks](https://apps.gnome.org/DiskUtility).
 
 ![Linux disk management window showing a 2TB Samsung SSD with partition details and management options](./change-of-encryption-password.png)
