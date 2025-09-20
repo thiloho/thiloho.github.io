@@ -2,7 +2,6 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import { getCollection } from "astro:content";
 import Date from "../../components/Date.astro";
-
 const allArticles = await getCollection("blog");
 const sortedArticles = allArticles.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
@@ -33,9 +32,11 @@ const sortedArticles = allArticles.sort((a, b) => {
           class="max-w-fit text-blue-800 hover:no-underline active:bg-neutral-200 active:dark:bg-neutral-700"
           href={`/blog/${id}`}
         >
-          {title}
+          <span id="article-title">{title}</span>
         </a>
-        <p class="not-prose">{description}</p>
+        <p id="article-description" class="not-prose">
+          {description}
+        </p>
       </article>
     ))
   }
@@ -43,44 +44,90 @@ const sortedArticles = allArticles.sort((a, b) => {
     No articles found matching your search.
   </p>
 </PageLayout>
-
 <script>
   const setupSearch = () => {
     const searchInput = document.querySelector('input[id="article-search"]');
     const articles = document.querySelectorAll("[data-article-title]");
     const noResults = document.querySelector("#no-results");
-
     if (!searchInput || !articles.length || !noResults) return;
+
+    const escapeRegex = (str: string) => {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    };
+
+    const highlightText = (text: string, searchTerms: string[]) => {
+      if (!searchTerms.length || searchTerms.every((term) => !term)) {
+        return text;
+      }
+
+      let highlightedText = text;
+      for (const term of searchTerms) {
+        if (term) {
+          const regex = new RegExp(`(${escapeRegex(term)})`, "gi");
+          highlightedText = highlightedText.replace(regex, "<mark>$1</mark>");
+        }
+      }
+      return highlightedText;
+    };
 
     searchInput.addEventListener("input", (e) => {
       const target = e.target as HTMLInputElement;
-      const searchTerm = target.value
-        .trim()
-        .replace(/\s+/g, " ")
+      const searchValue = target.value.trim().replace(/\s+/g, " ");
+      const searchTerms = searchValue
         .toLowerCase()
-        .split(" ");
-
+        .split(" ")
+        .filter((term) => term);
       let hasResults = false;
 
       for (const article of articles) {
-        const title = article.getAttribute("data-article-title") ?? "";
-        const description =
+        const originalTitle = article.getAttribute("data-article-title") ?? "";
+        const originalDescription =
           article.getAttribute("data-article-description") ?? "";
+        const titleElement = article.querySelector("#article-title");
+        const descriptionElement = article.querySelector(
+          "#article-description",
+        );
 
-        const matchesSearch = searchTerm.every(
+        if (!searchValue) {
+          if (titleElement) {
+            titleElement.innerHTML = originalTitle;
+          }
+          if (descriptionElement) {
+            descriptionElement.innerHTML = originalDescription;
+          }
+          article.classList.remove("hidden");
+          hasResults = true;
+          continue;
+        }
+
+        const matchesSearch = searchTerms.every(
           (word) =>
-            title.toLowerCase().includes(word) ||
-            description.toLowerCase().includes(word),
+            originalTitle.toLowerCase().includes(word) ||
+            originalDescription.toLowerCase().includes(word),
         );
 
         if (matchesSearch) {
+          if (titleElement) {
+            titleElement.innerHTML = highlightText(originalTitle, searchTerms);
+          }
+          if (descriptionElement) {
+            descriptionElement.innerHTML = highlightText(
+              originalDescription,
+              searchTerms,
+            );
+          }
           article.classList.remove("hidden");
           hasResults = true;
         } else {
+          if (titleElement) {
+            titleElement.innerHTML = originalTitle;
+          }
+          if (descriptionElement) {
+            descriptionElement.innerHTML = originalDescription;
+          }
           article.classList.add("hidden");
         }
       }
-
       noResults.classList.toggle("hidden", hasResults);
     });
   };
