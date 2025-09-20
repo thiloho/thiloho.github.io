@@ -23,6 +23,10 @@
   pre code {
     font-family: "Styrene B", monospace;
   }
+
+  mark {
+    @apply bg-neutral-200 text-current dark:bg-neutral-600;
+  }
 }
 
 /* Styrene A Font Family */
