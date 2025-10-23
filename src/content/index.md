@@ -17,9 +17,9 @@ I am a software developer from Germany who is passionate about building high qua
 
 ## Software
 
-- [NixOS](https://nixos.org)
-- [GNOME](https://www.gnome.org)
-- [VSCodium](https://vscodium.com)
+- [Arch Linux](https://archlinux.org)
+- [KDE Plasma](https://kde.org/plasma-desktop)
+- [Visual Studio Code](https://code.visualstudio.com)
 - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer)
 - [Tuta Mail](https://tuta.com)
 - [Mullvad VPN](https://mullvad.net)

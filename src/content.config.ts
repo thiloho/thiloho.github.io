@@ -13,15 +13,13 @@ const blog = defineCollection({
 
 const tracks = defineCollection({
   loader: file("./src/content/tracks.json"),
-  schema: ({ image }) =>
-    z.object({
-      id: z.number().positive(),
-      title: z.string(),
-      youtubeLink: z.string().url(),
-      artist: z.string(),
-      album: z.string(),
-      cover: image(),
-    }),
+  schema: z.object({
+    id: z.number().positive(),
+    title: z.string(),
+    youtubeLink: z.string().url(),
+    artist: z.string(),
+    album: z.string(),
+  }),
 });
 
 export const collections = { blog, tracks };
