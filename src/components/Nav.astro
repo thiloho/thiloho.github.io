@@ -3,17 +3,17 @@ import Logo from "../content/TH.svg";
 import Icon from "./Icon.astro";
 import Button from "./Button.astro";
 
-const routes = ["blog", "tracks"];
+const routes = ["blog", "tracks", "services"];
 ---
 
 <nav class="sticky top-0 z-10 max-w-none bg-white dark:bg-neutral-800">
   <div
-    class="mx-auto flex max-w-screen-xl items-center justify-between ps-4 pe-2 text-neutral-700 dark:text-neutral-300"
+    class="mx-auto flex max-w-screen-xl items-center justify-between gap-4 ps-4 pe-2 text-neutral-700 dark:text-neutral-300"
   >
     <a href="/" title="Home">
       <Logo width={42} height={42} />
     </a>
-    <div class="flex">
+    <div class="flex overflow-x-auto">
       {
         routes.map((route) => (
           <Button href={`/${route}`}>
