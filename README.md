@@ -1,47 +1,28 @@
-# Astro Starter Kit: Minimal
+# thilohoholt.com
 
-```sh
-npm create astro@latest -- --template minimal
+This is the source code for my personal website, which was built using the Astro web framework.
+
+In addition to the website itself, the repository includes Nix files (`flake.nix` and `server/*.nix`), which are used to configure the self-hosted services listed on the website (https://thilohohlt.com/services) and to easily locally deploy to the corresponding NixOS server.
+
+## Main commands
+
+- Use the command `npm run dev` to start the Astro development server
+- Run `npm run format` to format the web code with Prettier
+- Run `nix develop` to enter the dev shell, which includes packages for Nix language support and formatting
+- Run `nix run .#deploy-server` to evaluate if the current configuration builds successfully. If so, it will deploy the changes to the remote NixOS server
+
+For good IDE support (e.g., NixOS option completions in `default.nix`), use the `jnoortheen.nix-ide` VSCode extension with the following settings:
+
+```json
+{
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  }
+}
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
