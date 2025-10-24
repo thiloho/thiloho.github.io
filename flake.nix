@@ -36,6 +36,35 @@
         }
       );
 
+      apps = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+
+          deployServerScript = pkgs.writeShellApplication {
+            name = "deploy-server";
+            runtimeInputs = [
+              pkgs.nix
+              pkgs.openssh
+            ];
+            text = ''
+              nix run nixpkgs#nixos-rebuild-ng -- \
+                --flake .#server \
+                --target-host thohlt@91.98.171.83 \
+                --sudo \
+                --ask-sudo-password \
+                switch
+            '';
+          };
+        in
+        {
+          deploy-server = {
+            type = "app";
+            program = "${deployServerScript}/bin/deploy-server";
+          };
+        }
+      );
+
       nixosConfigurations =
         let
           mkSystem =
