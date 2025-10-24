@@ -4,6 +4,8 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings.trusted-users = [ "thohlt" ];
+
   boot = {
     loader = {
       systemd-boot.enable = true;
