@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -50,8 +50,17 @@
         "redlib.thilohohlt.com" = {
           enableACME = true;
           forceSSL = true;
+          locations."/" = {
+            proxyPass = "http://localhost:${toString config.services.redlib.port}";
+            proxyWebsockets = true;
+          };
         };
       };
+    };
+    redlib = {
+      enable = true;
+      port = 2222;
+      address = "127.0.0.1";
     };
   };
 
