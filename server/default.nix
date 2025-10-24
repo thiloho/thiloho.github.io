@@ -19,7 +19,7 @@
     "flakes"
   ];
 
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Berlin";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -28,10 +28,6 @@
     hostName = "nixos-server";
     firewall = {
       allowedTCPPorts = [
-        80
-        443
-      ];
-      allowedUDPPorts = [
         80
         443
       ];
