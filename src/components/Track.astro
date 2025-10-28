@@ -17,30 +17,16 @@ const videoId = youtubeLink.split("v=")[1];
 const thumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 ---
 
-<figure
-  class="relative flex flex-col border border-neutral-400 duration-300 hover:scale-105 active:scale-105 dark:border-neutral-500"
+<a
+  href={youtubeLink}
+  class="relative mt-4 block p-4 duration-300 after:absolute after:inset-0 after:z-0 after:bg-[rgba(255,255,255,0.75)] after:content-[''] first:mt-0 hover:scale-105 dark:after:bg-[rgba(38,38,38,0.75)]"
+  style={`word-break: break-word; background-image: url('${thumbnail}'); background-size: cover; background-position: center;`}
 >
-  <span
-    class="absolute -start-2 -top-2 border border-neutral-400 bg-white px-2 text-lg font-bold dark:border-neutral-500 dark:bg-neutral-800"
-    >{index}</span
-  >
-  <a href={youtubeLink}>
-    <img
-      src={thumbnail}
-      alt={`Cover for the song '${title}' by artist(s) '${artist}'`}
-      class="aspect-video w-full border-b border-neutral-400 dark:border-neutral-500"
-    />
-  </a>
-  <figcaption
-    class="flex flex-1 flex-col p-6 text-center"
-    style="word-break: break-word;"
+  <div
+    class="relative z-10 flex flex-col gap-2 text-neutral-900 dark:text-white"
   >
     <p class="text-lg font-bold">{title}</p>
-    <p class="mb-3">{uniqueArtists}</p>
-    <p
-      class="mt-auto border-t border-neutral-400 pt-3 text-sm dark:border-neutral-500"
-    >
-      {album}
-    </p>
-  </figcaption>
-</figure>
+    <p>{uniqueArtists}</p>
+    <p class="text-sm">{album}</p>
+  </div>
+</a>

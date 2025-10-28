@@ -10,16 +10,7 @@ const tracks = await getCollection("tracks");
   title="Tracks"
   description="My entire music playlist. It contains all kinds of songs."
 >
-  <p class="mb-8 text-center">
-    My entire music playlist. It contains all kinds of songs. <br />
-    Current total amount of songs: <strong class="text-lg"
-      >{tracks.length}</strong
-    >
-    <br />
-  </p>
-  <div
-    class="not-prose relative start-1/2 -ms-[min(50vw-1rem,50ch)] grid max-w-[calc(min(100vw-2rem,100ch))] grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] place-content-center gap-6"
-  >
+  <div class="not-prose">
     {
       tracks.map(({ data: { title, artist, album, youtubeLink } }, index) => (
         <Track {title} {artist} {album} {youtubeLink} index={++index} />
