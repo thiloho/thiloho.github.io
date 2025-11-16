@@ -119,6 +119,22 @@
         }
       ];
     };
+    minecraft-server = {
+      enable = true;
+      eula = true;
+      openFirewall = true;
+      declarative = true;
+      whitelist = {
+        "3xt1nct" = "4e4d744d-7748-46bc-add8-b3e8ca3b4cf5";
+      };
+      serverProperties = {
+        difficulty = "hard";
+        max-players = 5;
+        motd = "Thilo's SMP Server";
+        white-list = true;
+      };
+      jvmOpts = "-Xms1024M -Xmx2048M";
+    };
   };
 
   systemd.tmpfiles.rules = [
