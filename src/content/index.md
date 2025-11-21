@@ -18,8 +18,12 @@ I am a software developer from Germany who is passionate about building high qua
 ## Software
 
 - [Arch Linux](https://archlinux.org)
-- [KDE Plasma](https://kde.org/plasma-desktop)
-- [Visual Studio Code](https://code.visualstudio.com)
 - [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer)
-- [Tuta Mail](https://tuta.com)
+- [IntelliJ](https://www.jetbrains.com/idea)
+- [KDE Plasma](https://kde.org/plasma-desktop)
+- [LocalSend](https://localsend.org)
 - [Mullvad VPN](https://mullvad.net)
+- [qBittorrent](https://www.qbittorrent.org)
+- [Tuta Mail](https://tuta.com)
+- [Visual Studio Code](https://code.visualstudio.com)
+

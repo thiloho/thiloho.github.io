@@ -27,6 +27,22 @@
   mark {
     @apply bg-neutral-200 text-current dark:bg-neutral-600;
   }
+
+  #software + ul {
+    @apply flex flex-wrap gap-4 !p-0;
+  }
+
+  #software + ul > li {
+    @apply list-none !m-0 !p-0;
+  }
+
+  #software + ul > li a {
+    @apply border border-neutral-300 dark:border-neutral-600 px-2 py-1;
+  }
+
+  table {
+    @apply !text-base;
+  }
 }
 
 /* Styrene A Font Family */
