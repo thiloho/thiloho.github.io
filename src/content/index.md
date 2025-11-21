@@ -26,4 +26,3 @@ I am a software developer from Germany who is passionate about building high qua
 - [qBittorrent](https://www.qbittorrent.org)
 - [Tuta Mail](https://tuta.com)
 - [Visual Studio Code](https://code.visualstudio.com)
-
