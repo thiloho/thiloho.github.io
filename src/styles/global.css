@@ -2,6 +2,13 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-accent-cyan: #0891b2;
+  --color-accent-cyan-light: #67e8f9;
+  --color-accent-blue: #1e40af;
+  --color-accent-blue-light: #93c5fd;
+}
+
 @layer base {
   body {
     font-family: "Tiempos Text", serif;
@@ -16,12 +23,47 @@
     font-family: "Styrene A", sans-serif;
   }
 
+  /* Gradient effect on h1 and h2 */
+  h1,
+  h2 {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent-blue) 0%,
+      var(--color-accent-cyan) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+  }
+
+  .dark h1,
+  .dark h2 {
+    background: linear-gradient(
+      135deg,
+      var(--color-accent-blue-light) 0%,
+      var(--color-accent-cyan-light) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   code,
   kbd,
   samp,
   pre,
   pre code {
     font-family: "Styrene B", monospace;
+  }
+
+  /* Accent border on code blocks */
+  pre {
+    border-left: 4px solid var(--color-accent-cyan);
+  }
+
+  .dark pre {
+    border-left-color: var(--color-accent-cyan-light);
   }
 
   mark {

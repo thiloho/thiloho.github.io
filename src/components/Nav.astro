@@ -4,6 +4,7 @@ import Icon from "./Icon.astro";
 import Button from "./Button.astro";
 
 const routes = ["blog", "tracks", "services"];
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="sticky top-0 z-20 max-w-none bg-white dark:bg-neutral-800">
@@ -15,18 +16,32 @@ const routes = ["blog", "tracks", "services"];
     </a>
     <div class="flex overflow-x-auto">
       {
-        routes.map((route) => (
-          <Button href={`/${route}`}>
-            {route
-              .split(" ")
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ")}
-          </Button>
-        ))
+        routes.map((route) => {
+          const isActive = currentPath.startsWith(`/${route}`);
+          return (
+            <span class="relative">
+              <Button href={`/${route}`}>
+                {route
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")}
+              </Button>
+              {isActive && (
+                <span class="absolute right-0 bottom-0 left-0 h-0.5 bg-gradient-to-r from-[var(--color-accent-blue)] to-[var(--color-accent-cyan)] dark:from-[var(--color-accent-blue-light)] dark:to-[var(--color-accent-cyan-light)]" />
+              )}
+            </span>
+          );
+        })
       }
       <Button id="theme-toggle" variant="icon" title="Toggle dark mode">
-        <Icon name="moon" class="dark:hidden" />
-        <Icon name="sun" class="hidden dark:block" />
+        <Icon
+          name="moon"
+          class="transition-colors duration-200 hover:text-[var(--color-accent-cyan)] dark:hidden"
+        />
+        <Icon
+          name="sun"
+          class="hidden transition-colors duration-200 hover:text-[var(--color-accent-cyan-light)] dark:block"
+        />
       </Button>
       <Button variant="icon" href="/rss.xml" title="RSS feed">
         <Icon name="rss" />

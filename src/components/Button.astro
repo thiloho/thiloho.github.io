@@ -9,7 +9,7 @@ interface Props {
 const { href, variant = "text", title, id } = Astro.props;
 
 const baseClasses =
-  "border-transparent border-b-2 p-2 cursor-pointer hover:border-neutral-300 hover:bg-neutral-200 hover:dark:border-neutral-600 hover:dark:bg-neutral-700 active:bg-neutral-200 active:dark:bg-neutral-700 active:border-neutral-300 active:dark:border-neutral-600";
+  "border-transparent border-b-2 p-2 cursor-pointer hover:border-[var(--color-accent-cyan)] hover:bg-neutral-200 hover:dark:border-[var(--color-accent-cyan-light)] hover:dark:bg-neutral-700 active:bg-neutral-200 active:dark:bg-neutral-700 active:border-[var(--color-accent-cyan)] active:dark:border-[var(--color-accent-cyan-light)] transition-colors duration-200";
 const classes = `${baseClasses} ${variant === "icon" && href ? "inline-grid place-content-center" : "inline-block"}`;
 ---
 
