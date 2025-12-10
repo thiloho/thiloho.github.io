@@ -71,11 +71,13 @@ thiloho.github.io/
 ## Tech Stack Details
 
 ### Core Framework
+
 - **Astro 5.14.6**: Static site generator with component islands architecture
 - **TypeScript**: Strict mode enabled (`extends: "astro/tsconfigs/strict"`)
 - **Node.js**: ES Modules (`"type": "module"`)
 
 ### Styling
+
 - **Tailwind CSS 4.1.14**: Utility-first CSS framework
 - **@tailwindcss/typography**: Typography plugin for prose content
 - **Custom Fonts**:
@@ -86,6 +88,7 @@ thiloho.github.io/
   - **Tiempos Headline**: Serif variant for headlines (weights: 300-900)
 
 ### Markdown Processing
+
 - **markdown-it**: Markdown parser
 - **rehype-slug**: Automatically add IDs to headings
 - **rehype-autolink-headings**: Make headings linkable (wrap behavior)
@@ -93,16 +96,19 @@ thiloho.github.io/
 - **Syntax highlighting**: GitHub Dark theme via Shiki
 
 ### Content Management
+
 - **Content Collections**: Defined in `src/content.config.ts`
   - **blog**: Markdown files with frontmatter (title, description, pubDate, modDate)
   - **tracks**: JSON file with music track data (id, title, youtubeLink, artist, album)
 
 ### Integrations
+
 - **@astrojs/sitemap**: Automatic sitemap generation
 - **@astrojs/rss**: RSS feed support
 - **sanitize-html**: HTML sanitization
 
 ### Development Tools
+
 - **Prettier**: Code formatting with plugins for Astro and Tailwind
 - **Nix**: Development environment and server deployment
 
@@ -124,11 +130,13 @@ nix run .#deploy-server  # Deploy to remote NixOS server
 ```
 
 ### Starting Development
+
 1. Install dependencies: `npm install`
 2. Start dev server: `npm run dev`
 3. Open browser to `http://localhost:4321`
 
 ### Building for Production
+
 1. Run build: `npm run build`
 2. Output is in `dist/` directory
 3. Preview with: `npm run preview`
@@ -140,12 +148,13 @@ nix run .#deploy-server  # Deploy to remote NixOS server
 Blog posts are stored in `src/content/blog/` with each post in its own directory containing a `index.md` file.
 
 **Required frontmatter structure**:
+
 ```markdown
 ---
 title: "Your Post Title"
 description: "A brief description of the post"
 pubDate: "2025-01-04"
-modDate: "2025-04-27"  # Optional
+modDate: "2025-04-27" # Optional
 ---
 
 ## Your Content Here
@@ -154,6 +163,7 @@ Write your blog post content using Markdown...
 ```
 
 **Blog post conventions**:
+
 - Each post lives in its own directory: `src/content/blog/post-slug/index.md`
 - Use kebab-case for directory names (e.g., `nixos-with-ext4-and-luks`)
 - Include high-quality images in the same directory as the post
@@ -163,6 +173,7 @@ Write your blog post content using Markdown...
 ### Adding Music Tracks
 
 Edit `src/content/tracks.json` following this schema:
+
 ```json
 {
   "id": 1,
@@ -176,23 +187,27 @@ Edit `src/content/tracks.json` following this schema:
 ## Code Conventions
 
 ### TypeScript
+
 - Use strict TypeScript configuration
 - Define types explicitly where needed
 - Leverage Astro's built-in type system
 
 ### Astro Components
+
 - Use `.astro` file extension
 - Component names should be PascalCase (e.g., `TableOfContents.astro`)
 - Place reusable components in `src/components/`
 - Use layouts for page templates (`src/layouts/`)
 
 ### Styling
+
 - Use Tailwind utility classes for styling
 - Custom styles go in `src/styles/global.css`
 - Follow the custom variant pattern: `@custom-variant dark (&:where(.dark, .dark *))`
 - Apply responsive design with Tailwind's breakpoint prefixes
 
 ### Formatting
+
 - Always run `npm run format` before committing
 - Prettier automatically formats:
   - Astro files (via `prettier-plugin-astro`)
@@ -200,6 +215,7 @@ Edit `src/content/tracks.json` following this schema:
 - Configuration is in `.prettierrc`
 
 ### File Naming
+
 - Components: PascalCase (e.g., `Header.astro`)
 - Pages: kebab-case or descriptive names (e.g., `index.astro`, `legal-disclosure.astro`)
 - Content directories: kebab-case (e.g., `nixos-with-ext4-and-luks`)
@@ -208,12 +224,14 @@ Edit `src/content/tracks.json` following this schema:
 ## Deployment
 
 ### GitHub Pages
+
 - **Automatic deployment** on push to `main` branch
 - Workflow file: `.github/workflows/deploy.yml`
 - Uses official Astro GitHub Action (`withastro/action@v3`)
 - Custom domain: thilohohlt.com (configured via `public/CNAME`)
 
 ### Deployment Process
+
 1. Push to `main` branch
 2. GitHub Actions builds the site
 3. Astro generates static files
@@ -221,6 +239,7 @@ Edit `src/content/tracks.json` following this schema:
 5. Site available at https://thilohohlt.com
 
 ### Build Configuration
+
 - Site URL: `https://thilohohlt.com` (defined in `astro.config.ts`)
 - Prefetch: All links are prefetched (`prefetchAll: true`)
 - Output: Static HTML/CSS/JS in `dist/`
@@ -230,12 +249,14 @@ Edit `src/content/tracks.json` following this schema:
 This repository includes Nix configuration for self-hosted services listed at https://thilohohlt.com/services.
 
 ### Nix Files
+
 - `flake.nix`: Main Nix flake configuration
 - `flake.lock`: Dependency lock file
 - `server/default.nix`: NixOS system configuration
 - `server/hardware-configuration.nix`: Hardware-specific settings
 
 ### Nix Workflows
+
 ```bash
 # Enter development shell (provides nixd, nixfmt)
 nix develop
@@ -252,7 +273,9 @@ nix run .#deploy-server
 ```
 
 ### IDE Support for Nix
+
 For NixOS option completions, use the `jnoortheen.nix-ide` VSCode extension with these settings:
+
 ```json
 {
   "nix.enableLanguageServer": true,
@@ -270,21 +293,25 @@ For NixOS option completions, use the `jnoortheen.nix-ide` VSCode extension with
 ## Key Features to Preserve
 
 ### Custom Rehype Plugins
+
 The `rehypeWrapTables` plugin wraps tables in scrollable divs for responsive design:
+
 ```typescript
 const rehypeWrapTables = () => {
   // Wraps tables in div.overflow-x-auto.max-w-full
   // Ensures tables are scrollable on mobile
-}
+};
 ```
 
 ### Markdown Configuration
+
 - Syntax highlighting: GitHub Dark theme
 - Auto-generated heading IDs (via rehype-slug)
 - Clickable headings that wrap content (via rehype-autolink-headings)
 - Tables wrapped for horizontal scrolling
 
 ### Font Loading
+
 - All fonts use `font-display: swap` for performance
 - Fonts are self-hosted in `/public/fonts/`
 - Font families defined in `src/styles/global.css`
@@ -303,12 +330,14 @@ const rehypeWrapTables = () => {
 ### Common Tasks
 
 **Adding a new blog post**:
+
 1. Create directory in `src/content/blog/` with kebab-case name
 2. Add `index.md` with proper frontmatter
 3. Write content using Markdown
 4. Test with `npm run dev`
 
 **Modifying a component**:
+
 1. Read the component file first
 2. Understand its usage across the site
 3. Make targeted changes
@@ -316,12 +345,14 @@ const rehypeWrapTables = () => {
 5. Format with Prettier
 
 **Updating styles**:
+
 1. Check `src/styles/global.css` for existing patterns
 2. Use Tailwind utilities when possible
 3. Add custom CSS only when necessary
 4. Maintain dark mode support via custom variant
 
 **Working with NixOS configuration**:
+
 1. Changes to server config go in `server/` directory
 2. Always validate with `nix run .#eval-server` before deploying
 3. Be cautious with production server changes
@@ -340,22 +371,26 @@ const rehypeWrapTables = () => {
 ## Troubleshooting
 
 ### Build Fails
+
 - Check `astro.config.ts` for syntax errors
 - Verify all blog posts have required frontmatter
 - Ensure TypeScript types are correct
 - Run `npm install` to update dependencies
 
 ### Dev Server Issues
+
 - Port 4321 might be in use (kill the process or use `--port` flag)
 - Clear `.astro/` directory and rebuild: `rm -rf .astro && npm run dev`
 - Check for TypeScript errors in components
 
 ### Styling Problems
+
 - Run `npm run format` to fix Tailwind class ordering
 - Check global.css for font loading issues
 - Verify Tailwind plugin is loaded in Vite config
 
 ### Content Not Appearing
+
 - Verify content collection schema in `src/content.config.ts`
 - Check frontmatter matches schema requirements
 - Ensure file paths are correct

@@ -10,7 +10,17 @@ const tracks = await getCollection("tracks");
   title="Tracks"
   description="My entire music playlist. It contains all kinds of songs."
 >
-  <div class="not-prose">
+  <div id="loading-indicator" class="flex flex-col items-center gap-2">
+    <div
+      class="h-8 w-8 animate-spin rounded-full border-4 border-neutral-300 border-t-neutral-900 dark:border-neutral-600 dark:border-t-white"
+    >
+    </div>
+    <span
+      id="loading-percentage"
+      class="text-sm text-neutral-900 dark:text-white">0%</span
+    >
+  </div>
+  <div id="tracks-container" class="not-prose hidden">
     {
       tracks.map(({ data: { title, artist, album, youtubeLink } }, index) => (
         <Track {title} {artist} {album} {youtubeLink} index={++index} />
@@ -18,3 +28,40 @@ const tracks = await getCollection("tracks");
     }
   </div>
 </PageLayout>
+
+<script is:inline define:vars={{ tracks }}>
+  const loadThumbnails = async () => {
+    const thumbnailUrls = tracks.map(({ data: { youtubeLink } }) => {
+      const videoId = youtubeLink.split("v=")[1];
+      return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    });
+
+    let loadedCount = 0;
+    const total = thumbnailUrls.length;
+    const percentageEl = document.getElementById("loading-percentage");
+
+    const preloadImages = thumbnailUrls.map((url) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        const handleComplete = () => {
+          loadedCount++;
+          const percentage = Math.round((loadedCount / total) * 100);
+          percentageEl.textContent = `${percentage}%`;
+          resolve();
+        };
+
+        img.addEventListener("load", handleComplete, { once: true });
+        img.addEventListener("error", handleComplete, { once: true });
+        img.src = url;
+      });
+    });
+
+    await Promise.all(preloadImages);
+
+    document.getElementById("loading-indicator").classList.add("hidden");
+    document.getElementById("tracks-container").classList.remove("hidden");
+  };
+
+  loadThumbnails();
+  document.addEventListener("astro:after-swap", loadThumbnails);
+</script>
