@@ -7,7 +7,7 @@ const tracks = await getCollection("tracks");
 ---
 
 <PageLayout
-  title="Tracks"
+  title={`Tracks (${tracks.length})`}
   description="My entire music playlist. It contains all kinds of songs."
 >
   <div id="loading-indicator" class="flex flex-col items-center gap-2">
