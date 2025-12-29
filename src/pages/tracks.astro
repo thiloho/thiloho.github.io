@@ -32,7 +32,10 @@ const tracks = await getCollection("tracks");
 <script is:inline define:vars={{ tracks }}>
   const loadThumbnails = async () => {
     const tracksContainer = document.getElementById("tracks-container");
-    if (!tracksContainer) {
+    const loadingIndicator = document.getElementById("loading-indicator");
+    const percentageEl = document.getElementById("loading-percentage");
+
+    if (!tracksContainer || !loadingIndicator || !percentageEl) {
       return;
     }
 
@@ -43,7 +46,6 @@ const tracks = await getCollection("tracks");
 
     let loadedCount = 0;
     const total = thumbnailUrls.length;
-    const percentageEl = document.getElementById("loading-percentage");
 
     const preloadImages = thumbnailUrls.map((url) => {
       return new Promise((resolve) => {
@@ -63,7 +65,7 @@ const tracks = await getCollection("tracks");
 
     await Promise.all(preloadImages);
 
-    document.getElementById("loading-indicator").classList.add("hidden");
+    loadingIndicator.classList.add("hidden");
     tracksContainer.classList.remove("hidden");
   };
 
