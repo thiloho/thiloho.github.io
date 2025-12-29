@@ -31,6 +31,11 @@ const tracks = await getCollection("tracks");
 
 <script is:inline define:vars={{ tracks }}>
   const loadThumbnails = async () => {
+    const tracksContainer = document.getElementById("tracks-container");
+    if (!tracksContainer) {
+      return;
+    }
+
     const thumbnailUrls = tracks.map(({ data: { youtubeLink } }) => {
       const videoId = youtubeLink.split("v=")[1];
       return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
@@ -59,7 +64,7 @@ const tracks = await getCollection("tracks");
     await Promise.all(preloadImages);
 
     document.getElementById("loading-indicator").classList.add("hidden");
-    document.getElementById("tracks-container").classList.remove("hidden");
+    tracksContainer.classList.remove("hidden");
   };
 
   loadThumbnails();
