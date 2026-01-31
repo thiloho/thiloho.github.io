@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}404: Not found{% endblock title %}
+{% block description %}Requested page not found.{% endblock header %}
+{% block header %}404: Not found{% endblock header %}
+
+{% block content %}
+<p>
+    The file associated with the requested path (<code id="requested-path">this URL</code>) could not be found.
+</p>
+{% endblock content %}
+
+{% block body_scripts %}
+<script type="module">
+    document.getElementById("requested-path").textContent = window.location.pathname
+</script>
+{% endblock body_scripts %}

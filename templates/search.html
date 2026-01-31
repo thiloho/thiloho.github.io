@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="global-search">
+    <label for="global-search">Fuzzy search entire <a href="{{ get_url(path='search_index.en.json') }}">website index</a>:</label>
+    <input id="global-search" type="text" placeholder="privacy..." />
+</form>
+<div class="search-results"></div>
+{% endblock content %}
+
+{% block body_scripts %}
+<script type="module">
+    import Fuse from "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.mjs"
+
+    const response = await fetch("/search_index.en.json")
+    const searchIndex = await response.json()
+
+    const searchInputElement = document.querySelector('input[id="global-search"]')
+    const searchResultsElement = document.querySelector(".search-results")
+
+    searchInputElement.addEventListener("input", e => {
+        const target = e.target
+        const searchValue = target.value.trim().replace(/\s+/g, " ")
+
+        const searchOptions = {
+            includeScore: true,
+            keys: ["title", "description", "body"]
+        }
+        const fuse = new Fuse(searchIndex, searchOptions)
+
+        const searchResults = fuse.search(searchValue)
+
+        searchResultsElement.innerHTML = ""
+
+        if (searchValue === "") {
+            return
+        }
+
+        const countElement = document.createElement("p")
+        countElement.textContent = `${searchResults.length} result${searchResults.length !== 1 ? "s" : ""} found`
+        searchResultsElement.appendChild(countElement)
+
+        if (searchResults.length > 0) {
+            const ul = document.createElement("ul")
+            for (const result of searchResults) {
+                const li = document.createElement("li")
+                const anchor = document.createElement("a")
+                const p = document.createElement("p")
+                const url = result.item.url
+                const normalizedUrl = url.endsWith("/") ? url.slice(0, -1) : url
+                anchor.href = url
+                anchor.textContent = result.item.title
+                p.textContent = `(${normalizedUrl.includes("/blog") && !normalizedUrl.endsWith("/blog") ? "Blog post" : "Page"}, score ≈ ${result.score.toFixed(4)})`
+                li.appendChild(anchor)
+                li.appendChild(p)
+                ul.appendChild(li)
+            }
+            searchResultsElement.appendChild(ul)
+        }
+    })
+</script>
+{% endblock body_scripts %}

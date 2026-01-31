@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for page in paginator.pages %}
+<article class="blog-post">
+    <time datetime="{{ page.date | date(format='%+') }}">{{ page.date | date(format="%B %d, %Y") }}</time>
+    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    <p>{{ page.description }}</p>
+</article>
+{% endfor %}
+<nav class="paginator">
+    {% if paginator.previous %}
+    <a href="{{ paginator.previous }}" title="Previous page">
+        <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <title>Previous page</title>
+            <path fill-rule="evenodd"
+                d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+                clip-rule="evenodd" />
+        </svg>
+    </a>
+    {% endif %}
+    {% if paginator.current_index > 1 %}
+    <a href="{{ paginator.first }}" title="First page">1</a>
+    {% endif %}
+    <p>{{ paginator.current_index }}</p>
+    {% if paginator.current_index != paginator.number_pagers %}
+    <a href="{{ paginator.last }}" title="Last page">{{ paginator.number_pagers }}</a>
+    {% endif %}
+    {% if paginator.next %}
+    <a href="{{ paginator.next }}" title="Next page">
+        <svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <title>Next page</title>
+            <path fill-rule="evenodd"
+                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                clip-rule="evenodd" />
+        </svg>
+    </a>
+    {% endif %}
+</nav>
+{% endblock content %}

@@ -1,0 +1,17 @@
+base_url = "https://thilohohlt.com"
+compile_sass = true
+build_search_index = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
+[search]
+include_description = true
+index_format = "fuse_json"
+
+[markdown]
+insert_anchor_links = "heading"
+
+[markdown.highlighting]
+theme = "github-dark-high-contrast"
+
+[extra]
