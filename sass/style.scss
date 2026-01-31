@@ -114,7 +114,7 @@ h3~h3 {
 h2,
 h3 {
     margin-block-end: 1rem;
-    scroll-margin-block-start: 4rem;
+    scroll-margin-block-start: 6rem;
 }
 
 pre {
@@ -230,6 +230,11 @@ th:last-child {
         ul {
             transform: translateY(1px);
         }
+    }
+
+    h2,
+    h3 {
+        scroll-margin-block-start: 4rem;
     }
 }
 
