@@ -13,9 +13,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='apple-touch-icon.png') }}" />
     <link rel="manifest" href="{{ get_url(path='site.webmanifest') }}" />
     <link rel="sitemap" href="{{ get_url(path='sitemap.xml') }}" />
-    <link rel="alternate" type="application/rss+xml" title="RSS"
-        href="{{ get_url(path='rss.xml') }}">
-    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}">
+    {% set css = load_data(path="style.css") %}
+    <style>{{ css | safe }}</style>
     <title>{% block title %}{{ page.title | default(value=section.title | default(value="Thilo Hohlt")) }}{% endblock
         title %} - Thilo Hohlt</title>
     <meta name="description"
@@ -26,7 +26,7 @@
     <nav>
         <div class="container">
             <a href="{{ get_url(path='@/_index.md') }}" title="Home">
-                <img width="42" height="22.25" src="/TH.svg" alt="">
+                <img width="42" height="22.25" src="{{ get_url(path='TH.svg') }}" alt="Logo">
             </a>
             <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
             <a title="Global search" href="{{ get_url(path='@/search/index.md') }}">
