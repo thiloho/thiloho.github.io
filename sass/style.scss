@@ -172,7 +172,7 @@ th:last-child {
 
 .table-of-contents {
     position: sticky;
-    inset-block-start: 43px;
+    inset-block-start: calc(43px - 0.1875rem);
     margin-inline: auto;
 
     summary {
@@ -201,6 +201,7 @@ th:last-child {
         background-color: var(--color-bg);
         border: 1px solid var(--color-border);
         padding: 0;
+        transform: translateY(-1px);
     }
 
     a {
