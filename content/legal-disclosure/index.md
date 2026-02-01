@@ -24,4 +24,4 @@ Ludwig-Erhard-Str. 18 \
 20459 Hamburg \
 \
 E-Mail: [contact@thilohohlt.com](mailto:contact@thilohohlt.com) \
-Phone: []()\
+Phone: []()
