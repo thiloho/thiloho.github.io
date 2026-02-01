@@ -17,11 +17,4 @@ Phone: []()\
 \
 Responsible for content according to &sect; 18 (2) MStV: \
 \
-Thilo Hohlt \
-\
-c/o IP-Management #3723 \
-Ludwig-Erhard-Str. 18 \
-20459 Hamburg \
-\
-E-Mail: [contact@thilohohlt.com](mailto:contact@thilohohlt.com) \
-Phone: []()
+Thilo Hohlt (contact details as above)
