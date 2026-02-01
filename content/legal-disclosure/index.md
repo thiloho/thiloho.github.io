@@ -15,7 +15,7 @@ Ludwig-Erhard-Str. 18 \
 E-Mail: [contact@thilohohlt.com](mailto:contact@thilohohlt.com) \
 Phone: []()\
 \
-Responsible for content according to &sect; 18 (2) MStV:
+Responsible for content according to &sect; 18 (2) MStV: \
 \
 Thilo Hohlt \
 \
