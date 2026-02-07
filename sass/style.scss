@@ -92,6 +92,21 @@ footer {
         column-gap: 1rem;
         row-gap: 0.5rem;
         flex-wrap: wrap;
+        align-items: end;
+    }
+
+    .link-wrapper:last-child {
+        margin-inline-start: auto;
+
+        a {
+            color: inherit;
+        }
+
+        a:hover {
+            color: var(--color-link);
+            transform: scale(1.1);
+            transition-duration: 300ms;
+        }
     }
 }
 
