@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for id in page.extra.image_ids %}
+<figure tabindex="0">
+  <img class="gallery-img" src="https://picsum.photos/id/{{ id }}/3840/2160" alt="Sample image {{ id }}">
+  <figcaption>Sample image {{ id }}</figcaption>
+</figure>
+{% endfor %}
+<div class="backdrop"></div>
+{% endblock content %}

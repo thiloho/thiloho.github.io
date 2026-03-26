@@ -2,6 +2,7 @@
 
 {% block content %}
 <form class="global-search">
+    <noscript>You currently have JavaScript disabled, which is required to use the search functionality.</noscript>
     <label for="global-search">Fuzzy search entire <a href="{{ get_url(path='search_index.en.json') }}">website index</a>:</label>
     <input id="global-search" type="text" placeholder="privacy..." />
 </form>
