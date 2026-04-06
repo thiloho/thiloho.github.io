@@ -53,4 +53,19 @@ year = "2026"
 file = "DSC00160.JPG"
 caption = "Rügen, Germany"
 year = "2026"
+
+[[extra.photos]]
+file = "DSC00166.JPG"
+caption = "Hanover, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00174.JPG"
+caption = "Hanover, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00178.JPG"
+caption = "Hanover, Germany"
+year = "2026"
 +++

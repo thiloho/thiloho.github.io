@@ -5,7 +5,8 @@
 <figure tabindex="0">
   <img class="gallery-img"
        src="/photography/{{ photo.file }}"
-       alt="{{ photo.caption }} | {{ photo.year }}">
+       alt="{{ photo.caption }} | {{ photo.year }}"
+       loading="lazy">
   <figcaption>{{ photo.caption }}, {{ photo.year }}</figcaption>
 </figure>
 {% endfor %}
