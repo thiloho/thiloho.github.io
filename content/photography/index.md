@@ -68,4 +68,64 @@ year = "2026"
 file = "DSC00178.JPG"
 caption = "Hanover, Germany"
 year = "2026"
+
+[[extra.photos]]
+file = "DSC00206.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00214.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00215.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00216.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00220.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00223.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00228.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00230.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00232.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00234.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00240.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00249.JPG"
+caption = "Amsterdam, Netherlands"
+year = "2026"
 +++
