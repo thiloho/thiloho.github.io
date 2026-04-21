@@ -4,10 +4,13 @@
 {% for photo in page.extra.photos %}
 <figure tabindex="0">
   <img class="gallery-img"
-       src="/photography/{{ photo.file }}"
+       src="/photography/optimized/{{ photo.file | replace(from='.JPG', to='.WEBP') }}"
        alt="{{ photo.caption }} | {{ photo.year }}"
-       loading="lazy">
-  <figcaption>{{ photo.caption }}, {{ photo.year }}</figcaption>
+       loading="lazy"
+       decoding="async">
+  <figcaption>
+    {{ photo.caption }}, {{ photo.year }} | <a href="/photography/{{ photo.file }}">Original</a>
+  </figcaption>
 </figure>
 {% endfor %}
 <div class="backdrop"></div>

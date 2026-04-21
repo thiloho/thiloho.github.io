@@ -1,2 +1,4 @@
 static/photography/*.jpg filter=lfs diff=lfs merge=lfs -text
 static/photography/*.JPG filter=lfs diff=lfs merge=lfs -text
+static/photography/optimized/*.webp filter=lfs diff=lfs merge=lfs -text
+static/photography/optimized/*.WEBP filter=lfs diff=lfs merge=lfs -text
