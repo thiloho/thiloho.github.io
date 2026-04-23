@@ -16,8 +16,8 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml') }}">
     {% set css = load_data(path="style.css") %}
     <style>{{ css | safe }}</style>
-    <title>{% block title %}{{ page.title | default(value=section.title | default(value="Thilo Hohlt")) }}{% endblock
-        title %} - Thilo Hohlt</title>
+    {% set current_title = page.title | default(value=section.title | default(value="Thilo Hohlt")) %}
+    <title>{{ current_title }}{% if current_title != "Thilo Hohlt" %} - Thilo Hohlt{% endif %}</title>
     <meta name="description"
         content="{% block description %}{{ page.description | default(value=section.description | default(value='')) }}{% endblock description %}">
 </head>

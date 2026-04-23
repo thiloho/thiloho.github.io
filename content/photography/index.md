@@ -70,6 +70,11 @@ caption = "Hanover, Germany"
 year = "2026"
 
 [[extra.photos]]
+file = "DSC00258.JPG"
+caption = "Hanover, Germany"
+year = "2026"
+
+[[extra.photos]]
 file = "DSC00206.JPG"
 caption = "Amsterdam, Netherlands"
 year = "2026"
