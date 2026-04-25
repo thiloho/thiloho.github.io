@@ -94,6 +94,7 @@ main {
         overflow: hidden;
         border: 1px solid var(--color-border);
         position: relative;
+        user-select: none;
     }
 
     figure:has(.gallery-img):not(:focus-within):hover {
