@@ -133,4 +133,49 @@ year = "2026"
 file = "DSC00249.JPG"
 caption = "Amsterdam, Netherlands"
 year = "2026"
+
+[[extra.photos]]
+file = "DSC00261.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00266.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00267.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00271.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00273.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00279.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00281.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00291.JPG"
+caption = "Cologne, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00302.JPG"
+caption = "Cologne, Germany"
+year = "2026"
 +++
