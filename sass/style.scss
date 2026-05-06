@@ -153,6 +153,48 @@ main {
         inset-inline: 0;
         z-index: 30;
     }
+
+    .gallery-nav {
+        display: none;
+        position: absolute;
+        inset: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: -1px;
+    }
+
+    figure:has(.gallery-img):focus-within .gallery-nav {
+        display: flex;
+    }
+
+    .gallery-prev,
+    .gallery-next {
+        background-color: var(--color-bg-backdrop);
+        border: 1px solid var(--color-border);
+        padding: 0.25rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-bg-hover);
+        }
+    }
+
+    .gallery-prev {
+        border-inline-start: none;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
+
+    .gallery-next {
+        border-inline-end: none;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+
+    figure:first-of-type .gallery-prev,
+    figure:last-of-type .gallery-next {
+        visibility: hidden;
+    }
 }
 
 footer {

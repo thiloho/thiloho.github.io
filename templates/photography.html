@@ -9,9 +9,56 @@
        loading="lazy"
        decoding="async">
   <figcaption>
-    {{ photo.caption }}, {{ photo.year }} | <a href="/photography/{{ photo.file }}">Original</a>
+    {{ photo.caption }}, {{ photo.year }} | <a href="/photography/{{ photo.file }}" tabindex="-1">Original</a>
   </figcaption>
+  <div class="gallery-nav">
+    <button class="gallery-prev" tabindex="-1" title="Previous image">
+      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <title>Previous image</title>
+        <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <button class="gallery-next" tabindex="-1" title="Next image">
+      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <title>Next image</title>
+        <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
 </figure>
 {% endfor %}
 <div class="backdrop"></div>
 {% endblock content %}
+
+{% block body_scripts %}
+<script type="module">
+  const figures = [...document.querySelectorAll('figure:has(.gallery-img)')];
+
+  for (const [index, figure] of figures.entries()) {    
+    figure.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case "ArrowRight":
+          figures[index + 1]?.focus();
+          break;
+        case "ArrowLeft":
+          figures[index - 1]?.focus();
+          break;
+      }
+    });
+
+    figure.querySelector('.gallery-prev').addEventListener('click', () => {
+      figures[index - 1]?.focus();
+    });
+
+    figure.querySelector('.gallery-next').addEventListener('click', () => {
+      figures[index + 1]?.focus();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.activeElement?.blur();
+    }
+  });
+</script>
+{% endblock body_scripts %}
