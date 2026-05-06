@@ -5,9 +5,7 @@
 <figure tabindex="0">
   <img class="gallery-img"
        src="/photography/optimized/{{ photo.file | replace(from='.JPG', to='.WEBP') }}"
-       alt="{{ photo.caption }} | {{ photo.year }}"
-       loading="lazy"
-       decoding="async">
+       alt="{{ photo.caption }} | {{ photo.year }}">
   <figcaption>
     {{ photo.caption }}, {{ photo.year }} | <a href="/photography/{{ photo.file }}" tabindex="-1">Original</a>
   </figcaption>
