@@ -178,4 +178,89 @@ year = "2026"
 file = "DSC00302.JPG"
 caption = "Cologne, Germany"
 year = "2026"
+
+[[extra.photos]]
+file = "DSC00316.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00318.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00321.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00323.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00327.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00328.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00329.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00331.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00332.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00334.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00338.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00339.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00340.JPG"
+caption = "Düsseldorf, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00346.JPG"
+caption = "Bonn, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00347.JPG"
+caption = "Bonn, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00348.JPG"
+caption = "Bonn, Germany"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00349.JPG"
+caption = "Bonn, Germany"
+year = "2026"
 +++
