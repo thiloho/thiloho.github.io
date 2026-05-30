@@ -263,4 +263,224 @@ year = "2026"
 file = "DSC00349.JPG"
 caption = "Bonn, Germany"
 year = "2026"
+
+[[extra.photos]]
+file = "DSC00377.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00380.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00381.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00385.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00386.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00391.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00395.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00396.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00397.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00399.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00404.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00405.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00407.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00409.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00411.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00413.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00417.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00418.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00424.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00425.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00430.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00431.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00432.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00439.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00440.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00441.JPG"
+caption = "Lucerne, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00444.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00449.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00450.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00453.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00455.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00456.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00457.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00458.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00461.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00467.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00468.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00470.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00482.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00485.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00487.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00488.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00491.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
+
+[[extra.photos]]
+file = "DSC00496.JPG"
+caption = "Zurich, Switzerland"
+year = "2026"
 +++
