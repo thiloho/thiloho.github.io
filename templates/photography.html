@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for photo in page.extra.photos %}
-<figure tabindex="0">
+{% for photo in page.extra.photos | reverse %}
+<figure id="{{ photo.file | split(pat='.') | first | replace(from='DSC', to='') }}" tabindex="0">
   <img class="gallery-img"
        src="/photography/optimized/{{ photo.file | replace(from='.JPG', to='.WEBP') }}"
        alt="{{ photo.caption }} | {{ photo.year }}">
