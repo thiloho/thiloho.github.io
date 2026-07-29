@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title></title>
+      <link>https://thilohohlt.com</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://thilohohlt.com/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 19 Oct 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>E2E testing Spring Boot applications</title>
+          <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
+          <author>Thilo Hohlt</author>
+          <link>https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/</link>
+          <guid>https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/</guid>
+          <description xml:base="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/">&lt;h2 id=&quot;project-structure&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#project-structure&quot; aria-label=&quot;Anchor link for: project-structure&quot;&gt;Project structure&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;src&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;├── main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   ├── frontend&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │   ├── package.json&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │   ├── package-lock.json&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │   └── styles.css&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   ├── java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │   └── com&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │       └── thilohohlt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │           ├── Main.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │           └── service&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   │               └── ExampleService.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   └── resources&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│       ├── application.properties&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│       ├── static&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│       │   └── main.css&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│       └── templates&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│           └── example-page.html&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└── test&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    └── java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        └── com&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            └── thilohohlt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                └── test&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                    └── e2e&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        ├── BaseTest.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        ├── ExampleTest.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        ├── mocks&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        │   └── ExampleServiceMock.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        ├── pages&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        │   └── ExamplePage.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                        └── utils&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                            └── TestData.java&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;maven-dependencies&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#maven-dependencies&quot; aria-label=&quot;Anchor link for: maven-dependencies&quot;&gt;Maven dependencies&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;dependency&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;groupId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;org.springframework.boot&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;groupId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;artifactId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;spring-boot-starter-test&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;artifactId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;scope&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;test&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;scope&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;dependency&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;dependency&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;groupId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;com.microsoft.playwright&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;groupId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;artifactId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;playwright&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;artifactId&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;1.55.0&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;scope&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;test&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;scope&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #72F088;&quot;&gt;dependency&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;testdata&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#testdata&quot; aria-label=&quot;Anchor link for: testdata&quot;&gt;TestData&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;package&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e.utils;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;public class&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; TestData&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public static final&lt;&#x2F;span&gt;&lt;span&gt; String USER&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;ExampleUser&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;exampleservicemock&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#exampleservicemock&quot; aria-label=&quot;Anchor link for: exampleservicemock&quot;&gt;ExampleServiceMock&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;package&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e.mocks;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.service.ExampleService;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e.utils.TestData;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.springframework.stereotype.Service;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; java.util.List;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;Service&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;public class&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; ExampleServiceMock&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; extends&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; ExampleService&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;Override&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public&lt;&#x2F;span&gt;&lt;span&gt; String&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; getData&lt;&#x2F;span&gt;&lt;span&gt;(String&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; user&lt;&#x2F;span&gt;&lt;span&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        return&lt;&#x2F;span&gt;&lt;span&gt; TestData.USER;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;basetest&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#basetest&quot; aria-label=&quot;Anchor link for: basetest&quot;&gt;BaseTest&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;package&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; com.microsoft.playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.junit.jupiter.api.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.springframework.boot.test.context.SpringBootTest;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.springframework.boot.test.web.server.LocalServerPort;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.springframework.test.context.TestPropertySource;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;SpringBootTest&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;webEnvironment&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; SpringBootTest.WebEnvironment.RANDOM_PORT)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;TestPropertySource&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;properties&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;        &amp;quot;spring.profiles.active=test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;        &amp;quot;logging.level.com.thilohohlt=DEBUG&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;})&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;TestInstance&lt;&#x2F;span&gt;&lt;span&gt;(TestInstance.Lifecycle.PER_CLASS)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;public abstract class&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; BaseTest&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;LocalServerPort&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected int&lt;&#x2F;span&gt;&lt;span&gt; port;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static&lt;&#x2F;span&gt;&lt;span&gt; Playwright playwright;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static&lt;&#x2F;span&gt;&lt;span&gt; Browser browser;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected&lt;&#x2F;span&gt;&lt;span&gt; BrowserContext browserContext;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected&lt;&#x2F;span&gt;&lt;span&gt; Page page;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected&lt;&#x2F;span&gt;&lt;span&gt; String baseUrl;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;BeforeAll&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public static void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; launchBrowser&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        playwright &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; Playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;create&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        BrowserType&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;LaunchOptions launchOptions&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; = new&lt;&#x2F;span&gt;&lt;span&gt; BrowserType.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;LaunchOptions&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setHeadless&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;isHeadless&lt;&#x2F;span&gt;&lt;span&gt;());&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        String browserName&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; System.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getProperty&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;browser&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;chromium&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;).&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;toLowerCase&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        switch&lt;&#x2F;span&gt;&lt;span&gt; (browserName) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;            case&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;firefox&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                browser &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;firefox&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;launch&lt;&#x2F;span&gt;&lt;span&gt;(launchOptions);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;                break&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;            case&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;webkit&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                browser &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;webkit&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;launch&lt;&#x2F;span&gt;&lt;span&gt;(launchOptions);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;                break&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;            case&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;chromium&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;            default:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                browser &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;chromium&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;launch&lt;&#x2F;span&gt;&lt;span&gt;(launchOptions);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;                break&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;BeforeEach&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; createContextAndPage&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        baseUrl &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;http:&#x2F;&#x2F;localhost:&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt; port;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        Browser&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;NewContextOptions contextOptions&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; = new&lt;&#x2F;span&gt;&lt;span&gt; Browser.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;NewContextOptions&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setViewportSize&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;1280&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; 720&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setIgnoreHTTPSErrors&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;true&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setLocale&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;en-US&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setTimezoneId&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;America&#x2F;New_York&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        contextOptions.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setExtraHTTPHeaders&lt;&#x2F;span&gt;&lt;span&gt;(java.util.Map.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;of&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;                &amp;quot;Accept-Language&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;en-US,en;q=0.9&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        ));&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        browserContext &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; browser.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;newContext&lt;&#x2F;span&gt;&lt;span&gt;(contextOptions);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;isDebugMode&lt;&#x2F;span&gt;&lt;span&gt;()) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            browserContext.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;onRequest&lt;&#x2F;span&gt;&lt;span&gt;(request &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;-&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                    System.out.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;&amp;gt;&amp;gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt; request.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;method&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt; request.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;())&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            );&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            browserContext.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;onResponse&lt;&#x2F;span&gt;&lt;span&gt;(response &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;-&amp;gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                    System.out.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;&amp;lt;&amp;lt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt; response.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;status&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt; response.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;())&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            );&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        page &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; browserContext.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;newPage&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        page.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setDefaultTimeout&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getDefaultTimeout&lt;&#x2F;span&gt;&lt;span&gt;());&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        page.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;setDefaultNavigationTimeout&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getNavigationTimeout&lt;&#x2F;span&gt;&lt;span&gt;());&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;AfterEach&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; closeContext&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        if&lt;&#x2F;span&gt;&lt;span&gt; (browserContext &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;!=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; null&lt;&#x2F;span&gt;&lt;span&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            browserContext.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;close&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;AfterAll&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public static void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; closeBrowser&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        if&lt;&#x2F;span&gt;&lt;span&gt; (browser &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;!=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; null&lt;&#x2F;span&gt;&lt;span&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            browser.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;close&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        if&lt;&#x2F;span&gt;&lt;span&gt; (playwright &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;!=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; null&lt;&#x2F;span&gt;&lt;span&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;            playwright.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;close&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static boolean&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; isHeadless&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        return&lt;&#x2F;span&gt;&lt;span&gt; Boolean.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;parseBoolean&lt;&#x2F;span&gt;&lt;span&gt;(System.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getProperty&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;headless&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;true&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;));&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static boolean&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; isDebugMode&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        return&lt;&#x2F;span&gt;&lt;span&gt; Boolean.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;parseBoolean&lt;&#x2F;span&gt;&lt;span&gt;(System.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getProperty&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;debug&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;false&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;));&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static int&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; getDefaultTimeout&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        return&lt;&#x2F;span&gt;&lt;span&gt; Integer.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;parseInt&lt;&#x2F;span&gt;&lt;span&gt;(System.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getProperty&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;timeout&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;30000&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;));&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    protected static int&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; getNavigationTimeout&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;        return&lt;&#x2F;span&gt;&lt;span&gt; Integer.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;parseInt&lt;&#x2F;span&gt;&lt;span&gt;(System.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;getProperty&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;navigationTimeout&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;30000&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;));&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;examplepage&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#examplepage&quot; aria-label=&quot;Anchor link for: examplepage&quot;&gt;ExamplePage&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;package&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e.pages;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; com.microsoft.playwright.Page;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;public record&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; ExamplePage&lt;&#x2F;span&gt;&lt;span&gt;(Page page, String baseUrl) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; navigate&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        page.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;navigate&lt;&#x2F;span&gt;&lt;span&gt;(baseUrl);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;exampletest&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#exampletest&quot; aria-label=&quot;Anchor link for: exampletest&quot;&gt;ExampleTest&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;package&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; com.thilohohlt.test.e2e.pages.ExamplePage;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; org.junit.jupiter.api.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;import static&lt;&#x2F;span&gt;&lt;span&gt; org.assertj.core.api.Assertions.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;TestMethodOrder&lt;&#x2F;span&gt;&lt;span&gt;(MethodOrderer.OrderAnnotation.class)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;DisplayName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;Example E2E Test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;public class&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt; ExampleTest&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; extends&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; BaseTest&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    private&lt;&#x2F;span&gt;&lt;span&gt; ExamplePage examplePage;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;BeforeEach&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; setupPages&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        examplePage &lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;= new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; ExamplePage&lt;&#x2F;span&gt;&lt;span&gt;(page, baseUrl);&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;Test&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;Order&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    @&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;DisplayName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;&amp;quot;Should navigate to example page&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;    public void&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt; testNavigationToPlayerPage&lt;&#x2F;span&gt;&lt;span&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        examplePage.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #DBB7FF;&quot;&gt;navigate&lt;&#x2F;span&gt;&lt;span&gt;();&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</description>
+      </item>
+      <item>
+          <title>Custom email domain</title>
+          <pubDate>Mon, 28 Apr 2025 00:00:00 +0000</pubDate>
+          <author>Thilo Hohlt</author>
+          <link>https://thilohohlt.com/blog/custom-email-domain/</link>
+          <guid>https://thilohohlt.com/blog/custom-email-domain/</guid>
+          <description xml:base="https://thilohohlt.com/blog/custom-email-domain/">&lt;h2 id=&quot;introduction&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;Introduction&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Most people choose a popular email provider, such as Gmail, and stick with it for a long time. That&#x27;s fine and it works, but what if you want to switch to another one? You have dozens or even hundreds of accounts and now you have to log in to each one and change your email address to your new one, which takes a while.&lt;&#x2F;p&gt;
+&lt;p&gt;This whole process can be greatly simplified for the future by using a custom domain for your email, which is what I will be covering in this article.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-it-works&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#how-it-works&quot; aria-label=&quot;Anchor link for: how-it-works&quot;&gt;How it works&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If a provider has implemented this custom email domain feature, which many do (e.g. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;proton.me&#x2F;support&#x2F;custom-domain&quot;&gt;Proton custom domain&lt;&#x2F;a&gt; or &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;tuta.com&#x2F;blog&#x2F;own-domain-email&quot;&gt;Tuta domain name&lt;&#x2F;a&gt;), and you have purchased a domain from a domain registrar (e.g. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;porkbun.com&#x2F;products&#x2F;domains&quot;&gt;Porkbun&lt;&#x2F;a&gt;), the process works as follows:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your domain from your email provider&#x27;s dashboard&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to the domain via your domain registrar&#x27;s dashboard&lt;&#x2F;li&gt;
+&lt;li&gt;Insert some DNS records
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TXT&lt;&#x2F;code&gt; to prove that you are the owner of the domain, typically with the following content &lt;code&gt;&amp;lt;provider&amp;gt;-&amp;lt;verify&amp;gt;-&amp;lt;identifier&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;CNAME&lt;&#x2F;code&gt; and &lt;code&gt;TXT&lt;&#x2F;code&gt; records (e.g. SPF or DMARC), which are used for the actual authentication with various security measures&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Create arbitrary addresses for your domain, e.g. contact@domain.com and hello@domain.com&lt;&#x2F;li&gt;
+&lt;li&gt;When someone sends an email to your custom domain address, the DNS &lt;code&gt;MX&lt;&#x2F;code&gt; records redirect it to your email provider&#x27;s servers&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;You can check that you are receiving emails at your custom domain addresses by using https:&#x2F;&#x2F;sendtestemail.com.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;changing-provider&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#changing-provider&quot; aria-label=&quot;Anchor link for: changing-provider&quot;&gt;Changing provider&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If you decide to change your email provider, you can set up a custom email domain with your new provider. For all your accounts, you can now change the primary email to your custom email domain, and if you ever decide to change providers again, all you have to do is change your DNS records, saving you a lot of time and hassle.&lt;&#x2F;p&gt;
+&lt;p&gt;Note that some services do not allow you to edit your primary email, but if you contact technical support they may be able to do this for you.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;Conclusion&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Having your own email domain makes it much easier to switch providers and offers other benefits such as increased credibility or enhanced branding. So if you are currently in the process of changing your email addresses on different accounts, think about having your own email domain; you will thank yourself when you need to switch providers again.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Privacy-focused operating systems</title>
+          <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
+          <author>Thilo Hohlt</author>
+          <link>https://thilohohlt.com/blog/privacy-focused-operating-systems/</link>
+          <guid>https://thilohohlt.com/blog/privacy-focused-operating-systems/</guid>
+          <description xml:base="https://thilohohlt.com/blog/privacy-focused-operating-systems/">&lt;h2 id=&quot;introduction&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#introduction&quot; aria-label=&quot;Anchor link for: introduction&quot;&gt;Introduction&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Privacy on the Internet is a fundamental right and there are many steps you can take to protect your personal information. Various companies and services have developed sophisticated strategies to collect as much information from you as possible. A fundamental aspect of many people&#x27;s daily lives is the operating system they run on both their desktop computer and their mobile phone, and while the most popular ones offer great usability and features, they are usually not in favor of your privacy.&lt;&#x2F;p&gt;
+&lt;p&gt;Below are the options that, after a few years of testing, I have found to be the most usable and at the same time the most privacy and security oriented.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;desktop&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#desktop&quot; aria-label=&quot;Anchor link for: desktop&quot;&gt;Desktop&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I would recommend using one of the more popular GNU&#x2F;Linux distributions here, as they have many contributors and are well maintained. Some options that I find great are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;NixOS&lt;&#x2F;li&gt;
+&lt;li&gt;ArchLinux&lt;&#x2F;li&gt;
+&lt;li&gt;Debian&lt;&#x2F;li&gt;
+&lt;li&gt;Fedora&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You should stick with one of them and use it for at least a few months or years, or commit to it completely. Most of them are the same anyway, and with Flatpak there is already a universally usable packaging system that contains most of the relevant software you might need if it is not included in the distribution&#x27;s package repository.&lt;&#x2F;p&gt;
+&lt;p&gt;There are other great options, such as &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.freebsd.org&quot;&gt;FreeBSD&lt;&#x2F;a&gt; and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&quot;&gt;OpenBSD&lt;&#x2F;a&gt;, but these may not be as easy to use as GNU&#x2F;Linux, and there may be problems with hardware compatibility and software availability.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mobile&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#mobile&quot; aria-label=&quot;Anchor link for: mobile&quot;&gt;Mobile&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Your main choice here should probably be &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;grapheneos.org&quot;&gt;GrapheneOS&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Wikipedia states the following:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GrapheneOS is an open source, privacy and security-focused Android operating system that runs on selected Google Pixel devices, including smartphones, tablets and foldables.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;As mentioned in the quote, note that you need a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;grapheneos.org&#x2F;faq#supported-devices&quot;&gt;supported Google Pixel device&lt;&#x2F;a&gt; to use GrapheneOS and I would not recommend using any other privacy focused or hardened mobile operating system as they do not come close to its usability while maintaining these aspects.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#conclusion&quot; aria-label=&quot;Anchor link for: conclusion&quot;&gt;Conclusion&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Aside from operating systems, there are of course many different components that are needed to meet one&#x27;s digital needs. If you are interested in digital privacy, I would advise you to check out the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.privacyguides.org&#x2F;en&#x2F;tools&quot;&gt;Privacy Guide&#x27;s Recommendations&lt;&#x2F;a&gt;, there are probably several things you can replace with more private alternatives without much effort. Having a VPN connection that is always enabled on all of your devices is also a good utility to have, and it is not that expensive.&lt;&#x2F;p&gt;
+&lt;p&gt;Some services require personal information for verification or payment purposes, but just know that you can greatly limit the information you disclose about yourself by making the right choices.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Steps to install NixOS on a system with ext4 and LUKS</title>
+          <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+          <author>Thilo Hohlt</author>
+          <link>https://thilohohlt.com/blog/nixos-with-ext4-and-luks/</link>
+          <guid>https://thilohohlt.com/blog/nixos-with-ext4-and-luks/</guid>
+          <description xml:base="https://thilohohlt.com/blog/nixos-with-ext4-and-luks/">&lt;h2 id=&quot;disk-layout&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#disk-layout&quot; aria-label=&quot;Anchor link for: disk-layout&quot;&gt;Disk layout&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;sda&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;             8:0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 233.8G&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; disk&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;├─sda1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;          8:1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;   500M&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; part  &#x2F;boot&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;    # Unencrypted EFI partition&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;└─sda2&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;          8:2&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 233.3G&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; part&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;           # Encrypted partition&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;  └─cryptroot&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 254:0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 233.3G&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; crypt&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;          # LUKS container&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;    ├─vg-swap&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 254:1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt;     8G&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; lvm&lt;&#x2F;span&gt;&lt;span&gt;   [SWAP]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;   # LVM swap volume&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;    └─vg-root&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 254:2&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 225.3G&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; lvm   &#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;        # LVM root volume&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;partitioning&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#partitioning&quot; aria-label=&quot;Anchor link for: partitioning&quot;&gt;Partitioning&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;parted&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;sda&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; --&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; mklabel gpt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;parted&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;sda&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; --&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; mkpart ESP fat32 1MB 512MB&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;parted&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;sda&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; --&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; mkpart primary 512MB 100%&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;parted&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;sda&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; --&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; set&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; esp on&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;setting-up-encryption&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-encryption&quot; aria-label=&quot;Anchor link for: setting-up-encryption&quot;&gt;Setting up Encryption&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;cryptsetup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; luksFormat &#x2F;dev&#x2F;sda2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;cryptsetup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; luksOpen &#x2F;dev&#x2F;sda2 cryptroot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;setting-up-lvm&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#setting-up-lvm&quot; aria-label=&quot;Anchor link for: setting-up-lvm&quot;&gt;Setting up LVM&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;pvcreate&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;mapper&#x2F;cryptroot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;vgcreate&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; vg &#x2F;dev&#x2F;mapper&#x2F;cryptroot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;lvcreate&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -L&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 8G vg&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; swap&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;lvcreate&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -l&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; 100%FREE vg&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; root&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;creating-filesystems&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#creating-filesystems&quot; aria-label=&quot;Anchor link for: creating-filesystems&quot;&gt;Creating Filesystems&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mkfs.fat&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -F 32 -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; boot &#x2F;dev&#x2F;sda1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mkfs.ext4&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -L&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; root &#x2F;dev&#x2F;vg&#x2F;root&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mkswap&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -L&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; swap &#x2F;dev&#x2F;vg&#x2F;swap&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;mounting-filesystems&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#mounting-filesystems&quot; aria-label=&quot;Anchor link for: mounting-filesystems&quot;&gt;Mounting Filesystems&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;vg&#x2F;root &#x2F;mnt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mkdir&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -p&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;mnt&#x2F;boot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;mount&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; umask=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;077&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;boot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;swapon&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;dev&#x2F;vg&#x2F;swap&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;nixos-configuration&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#nixos-configuration&quot; aria-label=&quot;Anchor link for: nixos-configuration&quot;&gt;NixOS configuration&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;nixos-generate-config&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; --root&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &#x2F;mnt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;# Get UUID of encrypted partition (needed for configuration)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;blkid&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; -s&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; UUID &#x2F;dev&#x2F;sda2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Edit &lt;code&gt;&#x2F;mnt&#x2F;etc&#x2F;nixos&#x2F;configuration.nix&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;nix&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{ config&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; lib&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; pkgs&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt;, ...&lt;&#x2F;span&gt;&lt;span&gt; }:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;  boot&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    loader&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;      systemd-boot&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;enable&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;      efi&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;canTouchEfiVariables&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    };&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;    # Encryption configuration&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;    initrd&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;      luks&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;devices&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;        cryptroot&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #91CBFF;&quot;&gt;          device&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FF9492;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ADDCFF;&quot;&gt; &amp;quot;&#x2F;dev&#x2F;disk&#x2F;by-uuid&#x2F;UUID-OF-SDA2&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt; # Replace with your UUID&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        };&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      };&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    };&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  };&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #BDC4CC;&quot;&gt;  # ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;installation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;Installation&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #F0F3F6; background-color: #0A0C10;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;nixos-install&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FFB757;&quot;&gt;reboot&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;how-it-works&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#how-it-works&quot; aria-label=&quot;Anchor link for: how-it-works&quot;&gt;How it works&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;UEFI Phase&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;The UEFI firmware loads systemd-boot from the unencrypted &#x2F;boot partition&lt;&#x2F;li&gt;
+&lt;li&gt;systemd-boot loads the NixOS kernel and initrd&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Early boot&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Kernel starts and loads initrd&lt;&#x2F;li&gt;
+&lt;li&gt;initrd asks for LUKS passphrase&lt;&#x2F;li&gt;
+&lt;li&gt;after entering correct passphrase, &#x2F;dev&#x2F;sda2 will be decrypted&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;LVM setup&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;LVM volumes are available after decryption&lt;&#x2F;li&gt;
+&lt;li&gt;System can now access root and swap volumes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;System start&lt;&#x2F;strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Root file system is mounted&lt;&#x2F;li&gt;
+&lt;li&gt;Control handed over to systemd&lt;&#x2F;li&gt;
+&lt;li&gt;regular boot process continues&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;change-of-encryption-password&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#change-of-encryption-password&quot; aria-label=&quot;Anchor link for: change-of-encryption-password&quot;&gt;Change of encryption password&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To make this step as easy as possible, I recommend using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;apps.gnome.org&#x2F;DiskUtility&quot;&gt;GNOME Disks&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;thilohohlt.com&#x2F;blog&#x2F;nixos-with-ext4-and-luks&#x2F;change-of-encryption-password.png&quot; alt=&quot;Linux disk management window showing a 2TB Samsung SSD with partition details and management options&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

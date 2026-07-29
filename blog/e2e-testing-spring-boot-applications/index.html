@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-title" content="THohlt" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" href="https://thilohohlt.com/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://thilohohlt.com/favicon.svg" />
+    <link rel="shortcut icon" href="https://thilohohlt.com/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://thilohohlt.com/apple-touch-icon.png" />
+    <link rel="manifest" href="https://thilohohlt.com/site.webmanifest" />
+    <link rel="sitemap" href="https://thilohohlt.com/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://thilohohlt.com/rss.xml">
+    
+    <style>*,*::before,*::after{box-sizing:border-box}*:not(dialog){margin:0}@media (prefers-reduced-motion: no-preference){html{interpolate-size:allow-keywords}}body{line-height:1.5;-webkit-font-smoothing:antialiased}img,picture,video,canvas,svg{display:block;max-inline-size:100%}input,button,textarea,select{font:inherit}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}p{text-wrap:pretty}h1,h2,h3,h4,h5,h6{line-height:normal}#root,#__next{isolation:isolate}ul,ol{padding-inline-start:1rem}:root{--color-text: #e5e5e5;--color-bg: #262626;--color-bg-hover: #404040;--color-border: #737373;--color-bg-footer: #1f1f1f;--color-bg-backdrop: rgba(38, 38, 38, 0.90);--color-link: #8ec5ff}body{min-block-size:100vh;display:flex;flex-direction:column;color:#fff;font-family:"Verdana","Helvetica","Arial",sans-serif;color:var(--color-text)}nav,header,main{background-color:var(--color-bg)}body>nav{position:sticky;inset-block-start:0;z-index:10}body>nav .container{display:flex;align-items:center}body>nav a{padding:.5rem;border-block-end:.1875rem solid rgba(0,0,0,0);text-decoration:none;color:inherit}body>nav a:hover{background-color:var(--color-bg-hover);border-color:var(--color-border)}body>nav a:first-child{margin-inline-end:auto}header{padding-block-start:2rem}header .container{display:flex;flex-direction:column;gap:1rem;padding-block-end:2rem;border-block-end:.5625rem double var(--color-border)}main{display:flex;flex:1;align-items:stretch;padding-block-start:2rem;padding-block-end:4rem}main .container{container-type:inline-size;container-name:main-content}main .container:has(.gallery-img){inline-size:min(100% - 2rem,140ch);display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%,35ch), 1fr));gap:1rem}main .gallery-img{block-size:100%;object-fit:cover}main figure:has(.gallery-img){border-radius:.25rem;overflow:hidden;border:1px solid var(--color-border);position:relative;user-select:none}main figure:has(.gallery-img):not(:focus-within):hover{cursor:pointer}main figure:has(.gallery-img):not(:focus-within)::before{content:url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e5e5e5'%3E%3Cpath fill-rule='evenodd' d='M15 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V5.56l-3.97 3.97a.75.75 0 1 1-1.06-1.06l3.97-3.97h-2.69a.75.75 0 0 1-.75-.75Zm-12 0A.75.75 0 0 1 3.75 3h4.5a.75.75 0 0 1 0 1.5H5.56l3.97 3.97a.75.75 0 0 1-1.06 1.06L4.5 5.56v2.69a.75.75 0 0 1-1.5 0v-4.5Zm11.47 11.78a.75.75 0 1 1 1.06-1.06l3.97 3.97v-2.69a.75.75 0 0 1 1.5 0v4.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5h2.69l-3.97-3.97Zm-4.94-1.06a.75.75 0 0 1 0 1.06L5.56 19.5h2.69a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 1 1.5 0v2.69l3.97-3.97a.75.75 0 0 1 1.06 0Z' clip-rule='evenodd' /%3E%3C/svg%3E%0A");opacity:0;display:grid;place-content:center;position:absolute;inset:0;background-color:var(--color-bg-backdrop);transition-duration:300ms}main figure:has(.gallery-img):not(:focus-within):hover::before{opacity:1}main figure:has(.gallery-img):not(:focus-within) figcaption{display:none}main figure:has(.gallery-img):focus-within{display:flex;flex-direction:column;inline-size:min(100% - 2rem,140ch);inset-block-start:50%;inset-inline:50%;transform:translate(-50%, -50%);position:fixed;z-index:40;max-block-size:calc(100vh - 86px)}main figure:has(.gallery-img):focus-within figcaption{position:absolute;inset-block-start:0;inset-inline-end:0;background-color:var(--color-bg-backdrop);padding-block:.25rem;padding-inline:.5rem;border-bottom-left-radius:.25rem;border-inline-start:1px solid var(--color-border);border-block-end:1px solid var(--color-border);font-size:.875rem}main figure:has(.gallery-img):focus-within~.backdrop{position:fixed;background-color:var(--color-bg-backdrop);inset-block-start:43px;inset-block-end:0;inset-inline:0;z-index:30}main .gallery-prev,main .gallery-next{display:none;position:absolute;background-color:var(--color-bg-backdrop);border:1px solid var(--color-border);padding:.25rem;cursor:pointer;inset-block-start:50%;transform:translateY(-50%)}main .gallery-prev:hover,main .gallery-next:hover{background-color:var(--color-bg-hover)}main figure:has(.gallery-img):focus-within .gallery-prev,main figure:has(.gallery-img):focus-within .gallery-next{display:unset}main .gallery-prev{inset-inline-start:0;border-inline-start:none;border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}main .gallery-next{inset-inline-end:0;border-inline-end:none;border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}main figure:first-of-type .gallery-prev,main figure:last-of-type .gallery-next{visibility:hidden}footer{background-color:var(--color-bg-footer);padding-block:2rem}footer .container{display:flex;flex-direction:column;gap:1rem}footer .link-wrapper{display:flex;column-gap:1rem;row-gap:.5rem;flex-wrap:wrap;align-items:end}footer .link-wrapper:last-child{margin-inline-start:auto}footer .link-wrapper:last-child a{color:inherit;transition-duration:300ms}footer .link-wrapper:last-child a:hover{color:var(--color-link);transform:scale(1.1)}a{color:var(--color-link)}a:hover{text-decoration:none}h2~h2{margin-block-start:2rem !important}h3~h3{margin-block-start:1rem}h2,h3{margin-block-end:1rem;scroll-margin-block-start:6rem}pre{overflow-x:auto;padding:1rem;background-color:var(--color-bg-hover) !important;border-radius:.25rem;font-size:.875rem;font-family:"Lucida Console","Courier New",monospace}table{border-collapse:collapse}th,td{padding-block:.5rem;text-align:start}tr:not(:last-child),thead tr{border-block-end:1px solid var(--color-border)}td:not(:last-child),th:not(:last-child){padding-inline-end:1rem}td:last-child,th:last-child{padding-inline-start:1rem}.container{inline-size:min(100% - 2rem,70ch);margin-inline:auto}.zola-anchor{color:inherit;text-decoration:none}.zola-anchor:hover{text-decoration:underline;text-decoration-thickness:.125rem}#table-of-contents{text-align:center}.table-of-contents{position:sticky;z-index:20;inset-block-start:calc(43px - .1875rem);margin-inline:auto}.table-of-contents summary{background-color:var(--color-bg);border:1px solid var(--color-border);padding:.5rem;text-align:center;cursor:pointer;margin-inline:auto}.table-of-contents summary:hover{background-color:var(--color-bg-hover);border-color:var(--color-border)}.table-of-contents svg{display:inline;vertical-align:middle}.table-of-contents ul{margin-inline:auto;text-align:center;list-style:none;background-color:var(--color-bg);border:1px solid var(--color-border);padding:0;transform:translateY(-1px)}.table-of-contents a{display:block;padding-block:.5rem;padding-inline:.5rem}.table-of-contents a:hover{background-color:var(--color-bg-hover)}@container main-content (width > 575px){.table-of-contents{inset-block-start:-.1875rem;max-inline-size:30ch}.table-of-contents summary{max-inline-size:fit-content;border:none;border-block-end:.1875rem solid rgba(0,0,0,0);transform:translateY(1px)}.table-of-contents ul{transform:translateY(1px)}h2,h3{scroll-margin-block-start:4rem}}.blog-post{display:flex;flex-direction:column;gap:.5rem}.blog-post:not(:first-child){margin-block-start:2rem}.paginator{display:flex;margin-block-start:4rem;max-inline-size:fit-content;margin-inline-start:auto;align-items:center}.paginator a,.paginator p{display:inline-grid;place-content:center;inline-size:2.5rem;aspect-ratio:1/1;border-block-end:.1875rem solid rgba(0,0,0,0)}.paginator a{text-decoration:none;color:inherit}.paginator p{border:1px solid var(--color-border)}.paginator a:hover{background-color:var(--color-bg-hover);border-color:var(--color-border)}.blog-post-content{margin-block-start:2rem}.blog-post-content>*+*{margin-block-start:1rem}.global-search{display:flex;flex-direction:column;gap:1rem}.global-search input{padding-inline:1rem;padding-block:.5rem;background-color:var(--color-bg);border:1px solid var(--color-border)}.search-results{display:flex;flex-direction:column;gap:.5rem;margin-block-start:1rem}.search-results p{font-style:italic}</style>
+    
+    <title>E2E testing Spring Boot applications - Thilo Hohlt</title>
+    <meta name="description"
+        content="Instructions for end-to-end testing in Spring Boot, covering everything from project structure to stable test flows and CI integration.">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="https://thilohohlt.com/" title="Home">
+                <svg width="48" height="24" viewBox="0 0 134.8 71.4" xmlns="http://www.w3.org/2000/svg">
+                    <title>TH logo</title>
+                    <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#525252"
+                        stroke-width="0.125mm" fill="#a1a1a1" style="stroke:#525252;stroke-width:0.125mm;fill:#a1a1a1">
+                        <path
+                            d="M 92.2 71.4 L 63.1 71.4 L 63.1 67.2 L 64.4 67.2 Q 66.7 67.2 68.55 66.7 Q 70.4 66.2 71.5 64.65 A 5.045 5.045 0 0 0 72.17 63.27 Q 72.587 61.979 72.6 60.121 A 17.219 17.219 0 0 0 72.6 60 L 72.6 11 A 12.54 12.54 0 0 0 72.509 9.435 Q 72.285 7.659 71.509 6.627 A 3.715 3.715 0 0 0 71.45 6.55 Q 70.3 5.1 68.45 4.65 A 15.785 15.785 0 0 0 66.001 4.263 A 19.693 19.693 0 0 0 64.4 4.2 L 63.1 4.2 L 63.1 0 L 92.2 0 L 92.2 4.2 L 90.9 4.2 A 17.148 17.148 0 0 0 88.267 4.395 A 14.51 14.51 0 0 0 86.8 4.7 A 5.523 5.523 0 0 0 84.882 5.604 A 5.171 5.171 0 0 0 83.8 6.7 Q 82.771 8.104 82.705 10.996 A 17.684 17.684 0 0 0 82.7 11.4 L 82.7 31.6 L 115.2 31.6 L 115.2 11.4 A 14.799 14.799 0 0 0 115.113 9.734 Q 114.92 8.032 114.296 6.995 A 3.873 3.873 0 0 0 114.1 6.7 Q 113 5.2 111.15 4.7 A 14.115 14.115 0 0 0 108.926 4.296 A 18.631 18.631 0 0 0 107 4.2 L 105.7 4.2 L 105.7 0 L 134.8 0 L 134.8 4.2 L 133.5 4.2 A 17.148 17.148 0 0 0 130.867 4.395 A 14.51 14.51 0 0 0 129.4 4.7 A 5.523 5.523 0 0 0 127.482 5.604 A 5.171 5.171 0 0 0 126.4 6.7 Q 125.371 8.104 125.305 10.996 A 17.684 17.684 0 0 0 125.3 11.4 L 125.3 60.5 A 11.673 11.673 0 0 0 125.401 62.094 Q 125.512 62.894 125.743 63.543 A 4.544 4.544 0 0 0 126.45 64.85 Q 127.6 66.3 129.45 66.75 A 15.785 15.785 0 0 0 131.899 67.137 A 19.693 19.693 0 0 0 133.5 67.2 L 134.8 67.2 L 134.8 71.4 L 105.7 71.4 L 105.7 67.2 L 107 67.2 Q 109.3 67.2 111.15 66.7 Q 113 66.2 114.1 64.65 A 5.045 5.045 0 0 0 114.77 63.27 Q 115.187 61.979 115.2 60.121 A 17.219 17.219 0 0 0 115.2 60 L 115.2 36.6 L 82.7 36.6 L 82.7 60 A 14.094 14.094 0 0 0 82.787 61.621 Q 82.998 63.435 83.718 64.53 A 4.105 4.105 0 0 0 83.8 64.65 Q 84.9 66.2 86.8 66.7 A 15.233 15.233 0 0 0 89.554 67.151 A 18.189 18.189 0 0 0 90.9 67.2 L 92.2 67.2 L 92.2 71.4 Z M 44.1 71.4 L 13 71.4 L 13 67.2 L 15.3 67.2 A 18.863 18.863 0 0 0 17.664 67.058 A 15.182 15.182 0 0 0 19.35 66.75 Q 21.2 66.3 22.35 64.85 Q 23.179 63.805 23.41 62.007 A 11.832 11.832 0 0 0 23.5 60.5 L 23.5 5 L 13.9 5 Q 11.343 5 9.698 5.828 A 4.991 4.991 0 0 0 7.8 7.45 Q 6.1 9.9 5.7 13.2 L 5.2 17.5 L 0 17.5 L 0.5 0 L 56.8 0 L 57.3 17.5 L 52.1 17.5 L 51.6 13.2 A 13.62 13.62 0 0 0 50.739 9.756 A 11.607 11.607 0 0 0 49.5 7.45 Q 48.152 5.507 45.043 5.105 A 13.611 13.611 0 0 0 43.3 5 L 33.6 5 L 33.6 60 A 14.094 14.094 0 0 0 33.687 61.621 Q 33.898 63.435 34.618 64.53 A 4.105 4.105 0 0 0 34.7 64.65 Q 35.8 66.2 37.7 66.7 A 15.233 15.233 0 0 0 40.454 67.151 A 18.189 18.189 0 0 0 41.8 67.2 L 44.1 67.2 L 44.1 71.4 Z"
+                            vector-effect="non-scaling-stroke" />
+                    </g>
+                </svg>
+            </a>
+            <a title="Blog" href="https://thilohohlt.com/blog/">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <title>Blog</title>
+                    <path
+                        d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                    <path
+                        d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                </svg>
+            </a>
+            <a title="Photography" href="https://thilohohlt.com/photography/">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <title>Photography</title>
+                    <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+                    <path fill-rule="evenodd"
+                        d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a title="Global search" href="https://thilohohlt.com/search/">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <title>Global search</title>
+                    <path fill-rule="evenodd"
+                        d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a title="RSS feed" href="https://thilohohlt.com/rss.xml">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <title>RSS feed</title>
+                    <path fill-rule="evenodd"
+                        d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>E2E testing Spring Boot applications</h1>
+            
+            <time datetime="2025-10-19T00:00:00+00:00">October 19, 2025</time>
+            
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            
+
+<h2 id="table-of-contents">
+    <a class="zola-anchor" href="#table-of-contents" aria-label="Anchor link for: table-of-contents">Table of
+        contents</a>
+</h2>
+<details class="table-of-contents">
+    <summary title="Table of Contents">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <title>Table of Contents</title>
+            <path fill-rule="evenodd"
+                d="M2.625 6.75a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0A.75.75 0 0 1 8.25 6h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75ZM2.625 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12A.75.75 0 0 1 7.5 12Zm-4.875 5.25a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75Z"
+                clip-rule="evenodd" />
+        </svg>
+    </summary>
+    <ul>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#project-structure">Project structure</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#maven-dependencies">Maven dependencies</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#testdata">TestData</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#exampleservicemock">ExampleServiceMock</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#basetest">BaseTest</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#examplepage">ExamplePage</a>
+            
+        </li>
+        
+        <li>
+            <a href="https://thilohohlt.com/blog/e2e-testing-spring-boot-applications/#exampletest">ExampleTest</a>
+            
+        </li>
+        
+    </ul>
+</details>
+
+<article class="blog-post-content">
+    <h2 id="project-structure"><a class="zola-anchor" href="#project-structure" aria-label="Anchor link for: project-structure">Project structure</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="plain"><span class="giallo-l"><span>src</span></span>
+<span class="giallo-l"><span>├── main</span></span>
+<span class="giallo-l"><span>│   ├── frontend</span></span>
+<span class="giallo-l"><span>│   │   ├── package.json</span></span>
+<span class="giallo-l"><span>│   │   ├── package-lock.json</span></span>
+<span class="giallo-l"><span>│   │   └── styles.css</span></span>
+<span class="giallo-l"><span>│   ├── java</span></span>
+<span class="giallo-l"><span>│   │   └── com</span></span>
+<span class="giallo-l"><span>│   │       └── thilohohlt</span></span>
+<span class="giallo-l"><span>│   │           ├── Main.java</span></span>
+<span class="giallo-l"><span>│   │           └── service</span></span>
+<span class="giallo-l"><span>│   │               └── ExampleService.java</span></span>
+<span class="giallo-l"><span>│   └── resources</span></span>
+<span class="giallo-l"><span>│       ├── application.properties</span></span>
+<span class="giallo-l"><span>│       ├── static</span></span>
+<span class="giallo-l"><span>│       │   └── main.css</span></span>
+<span class="giallo-l"><span>│       └── templates</span></span>
+<span class="giallo-l"><span>│           └── example-page.html</span></span>
+<span class="giallo-l"><span>└── test</span></span>
+<span class="giallo-l"><span>    └── java</span></span>
+<span class="giallo-l"><span>        └── com</span></span>
+<span class="giallo-l"><span>            └── thilohohlt</span></span>
+<span class="giallo-l"><span>                └── test</span></span>
+<span class="giallo-l"><span>                    └── e2e</span></span>
+<span class="giallo-l"><span>                        ├── BaseTest.java</span></span>
+<span class="giallo-l"><span>                        ├── ExampleTest.java</span></span>
+<span class="giallo-l"><span>                        ├── mocks</span></span>
+<span class="giallo-l"><span>                        │   └── ExampleServiceMock.java</span></span>
+<span class="giallo-l"><span>                        ├── pages</span></span>
+<span class="giallo-l"><span>                        │   └── ExamplePage.java</span></span>
+<span class="giallo-l"><span>                        └── utils</span></span>
+<span class="giallo-l"><span>                            └── TestData.java</span></span></code></pre><h2 id="maven-dependencies"><a class="zola-anchor" href="#maven-dependencies" aria-label="Anchor link for: maven-dependencies">Maven dependencies</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="xml"><span class="giallo-l"><span>&lt;</span><span style="color: #72F088;">dependency</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">groupId</span><span>&gt;org.springframework.boot&lt;/</span><span style="color: #72F088;">groupId</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">artifactId</span><span>&gt;spring-boot-starter-test&lt;/</span><span style="color: #72F088;">artifactId</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">scope</span><span>&gt;test&lt;/</span><span style="color: #72F088;">scope</span><span>&gt;</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #72F088;">dependency</span><span>&gt;</span></span>
+<span class="giallo-l"><span>&lt;</span><span style="color: #72F088;">dependency</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">groupId</span><span>&gt;com.microsoft.playwright&lt;/</span><span style="color: #72F088;">groupId</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">artifactId</span><span>&gt;playwright&lt;/</span><span style="color: #72F088;">artifactId</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">version</span><span>&gt;1.55.0&lt;/</span><span style="color: #72F088;">version</span><span>&gt;</span></span>
+<span class="giallo-l"><span>    &lt;</span><span style="color: #72F088;">scope</span><span>&gt;test&lt;/</span><span style="color: #72F088;">scope</span><span>&gt;</span></span>
+<span class="giallo-l"><span>&lt;/</span><span style="color: #72F088;">dependency</span><span>&gt;</span></span></code></pre><h2 id="testdata"><a class="zola-anchor" href="#testdata" aria-label="Anchor link for: testdata">TestData</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="java"><span class="giallo-l"><span style="color: #FF9492;">package</span><span> com.thilohohlt.test.e2e.utils;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">public class</span><span style="color: #FFB757;"> TestData</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public static final</span><span> String USER</span><span style="color: #FF9492;"> =</span><span style="color: #ADDCFF;"> &quot;ExampleUser&quot;</span><span>;</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="exampleservicemock"><a class="zola-anchor" href="#exampleservicemock" aria-label="Anchor link for: exampleservicemock">ExampleServiceMock</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="java"><span class="giallo-l"><span style="color: #FF9492;">package</span><span> com.thilohohlt.test.e2e.mocks;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> com.thilohohlt.service.ExampleService;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> com.thilohohlt.test.e2e.utils.TestData;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.springframework.stereotype.Service;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> java.util.List;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">Service</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">public class</span><span style="color: #FFB757;"> ExampleServiceMock</span><span style="color: #FF9492;"> extends</span><span style="color: #91CBFF;"> ExampleService</span><span> {</span></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">Override</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public</span><span> String</span><span style="color: #DBB7FF;"> getData</span><span>(String</span><span style="color: #FFB757;"> user</span><span>) {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        return</span><span> TestData.USER;</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="basetest"><a class="zola-anchor" href="#basetest" aria-label="Anchor link for: basetest">BaseTest</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="java"><span class="giallo-l"><span style="color: #FF9492;">package</span><span> com.thilohohlt.test.e2e;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> com.microsoft.playwright.</span><span style="color: #91CBFF;">*</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.junit.jupiter.api.</span><span style="color: #91CBFF;">*</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.springframework.boot.test.context.SpringBootTest;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.springframework.boot.test.web.server.LocalServerPort;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.springframework.test.context.TestPropertySource;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">SpringBootTest</span><span>(</span><span style="color: #91CBFF;">webEnvironment</span><span style="color: #FF9492;"> =</span><span> SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">TestPropertySource</span><span>(</span><span style="color: #91CBFF;">properties</span><span style="color: #FF9492;"> =</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #ADDCFF;">        &quot;spring.profiles.active=test&quot;</span><span>,</span></span>
+<span class="giallo-l"><span style="color: #ADDCFF;">        &quot;logging.level.com.thilohohlt=DEBUG&quot;</span></span>
+<span class="giallo-l"><span>})</span></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">TestInstance</span><span>(TestInstance.Lifecycle.PER_CLASS)</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">public abstract class</span><span style="color: #FFB757;"> BaseTest</span><span> {</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">LocalServerPort</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected int</span><span> port;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static</span><span> Playwright playwright;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static</span><span> Browser browser;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected</span><span> BrowserContext browserContext;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected</span><span> Page page;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected</span><span> String baseUrl;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">BeforeAll</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public static void</span><span style="color: #DBB7FF;"> launchBrowser</span><span>() {</span></span>
+<span class="giallo-l"><span>        playwright </span><span style="color: #FF9492;">=</span><span> Playwright.</span><span style="color: #DBB7FF;">create</span><span>();</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        BrowserType</span><span style="color: #FFB757;">.</span><span>LaunchOptions launchOptions</span><span style="color: #FF9492;"> = new</span><span> BrowserType.</span><span style="color: #DBB7FF;">LaunchOptions</span><span>()</span></span>
+<span class="giallo-l"><span>                .</span><span style="color: #DBB7FF;">setHeadless</span><span>(</span><span style="color: #DBB7FF;">isHeadless</span><span>());</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        String browserName</span><span style="color: #FF9492;"> =</span><span> System.</span><span style="color: #DBB7FF;">getProperty</span><span>(</span><span style="color: #ADDCFF;">&quot;browser&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;chromium&quot;</span><span>).</span><span style="color: #DBB7FF;">toLowerCase</span><span>();</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        switch</span><span> (browserName) {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">            case</span><span style="color: #ADDCFF;"> &quot;firefox&quot;</span><span style="color: #FF9492;">:</span></span>
+<span class="giallo-l"><span>                browser </span><span style="color: #FF9492;">=</span><span> playwright.</span><span style="color: #DBB7FF;">firefox</span><span>().</span><span style="color: #DBB7FF;">launch</span><span>(launchOptions);</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">                break</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">            case</span><span style="color: #ADDCFF;"> &quot;webkit&quot;</span><span style="color: #FF9492;">:</span></span>
+<span class="giallo-l"><span>                browser </span><span style="color: #FF9492;">=</span><span> playwright.</span><span style="color: #DBB7FF;">webkit</span><span>().</span><span style="color: #DBB7FF;">launch</span><span>(launchOptions);</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">                break</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">            case</span><span style="color: #ADDCFF;"> &quot;chromium&quot;</span><span style="color: #FF9492;">:</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">            default:</span></span>
+<span class="giallo-l"><span>                browser </span><span style="color: #FF9492;">=</span><span> playwright.</span><span style="color: #DBB7FF;">chromium</span><span>().</span><span style="color: #DBB7FF;">launch</span><span>(launchOptions);</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">                break</span><span>;</span></span>
+<span class="giallo-l"><span>        }</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">BeforeEach</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public void</span><span style="color: #DBB7FF;"> createContextAndPage</span><span>() {</span></span>
+<span class="giallo-l"><span>        baseUrl </span><span style="color: #FF9492;">=</span><span style="color: #ADDCFF;"> &quot;http://localhost:&quot;</span><span style="color: #FF9492;"> +</span><span> port;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        Browser</span><span style="color: #FFB757;">.</span><span>NewContextOptions contextOptions</span><span style="color: #FF9492;"> = new</span><span> Browser.</span><span style="color: #DBB7FF;">NewContextOptions</span><span>()</span></span>
+<span class="giallo-l"><span>                .</span><span style="color: #DBB7FF;">setViewportSize</span><span>(</span><span style="color: #91CBFF;">1280</span><span>,</span><span style="color: #91CBFF;"> 720</span><span>)</span></span>
+<span class="giallo-l"><span>                .</span><span style="color: #DBB7FF;">setIgnoreHTTPSErrors</span><span>(</span><span style="color: #91CBFF;">true</span><span>)</span></span>
+<span class="giallo-l"><span>                .</span><span style="color: #DBB7FF;">setLocale</span><span>(</span><span style="color: #ADDCFF;">&quot;en-US&quot;</span><span>)</span></span>
+<span class="giallo-l"><span>                .</span><span style="color: #DBB7FF;">setTimezoneId</span><span>(</span><span style="color: #ADDCFF;">&quot;America/New_York&quot;</span><span>);</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        contextOptions.</span><span style="color: #DBB7FF;">setExtraHTTPHeaders</span><span>(java.util.Map.</span><span style="color: #DBB7FF;">of</span><span>(</span></span>
+<span class="giallo-l"><span style="color: #ADDCFF;">                &quot;Accept-Language&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;en-US,en;q=0.9&quot;</span></span>
+<span class="giallo-l"><span>        ));</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        browserContext </span><span style="color: #FF9492;">=</span><span> browser.</span><span style="color: #DBB7FF;">newContext</span><span>(contextOptions);</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">        if</span><span> (</span><span style="color: #DBB7FF;">isDebugMode</span><span>()) {</span></span>
+<span class="giallo-l"><span>            browserContext.</span><span style="color: #DBB7FF;">onRequest</span><span>(request </span><span style="color: #FF9492;">-&gt;</span></span>
+<span class="giallo-l"><span>                    System.out.</span><span style="color: #DBB7FF;">println</span><span>(</span><span style="color: #ADDCFF;">&quot;&gt;&gt; &quot;</span><span style="color: #FF9492;"> +</span><span> request.</span><span style="color: #DBB7FF;">method</span><span>()</span><span style="color: #FF9492;"> +</span><span style="color: #ADDCFF;"> &quot; &quot;</span><span style="color: #FF9492;"> +</span><span> request.</span><span style="color: #DBB7FF;">url</span><span>())</span></span>
+<span class="giallo-l"><span>            );</span></span>
+<span class="giallo-l"><span>            browserContext.</span><span style="color: #DBB7FF;">onResponse</span><span>(response </span><span style="color: #FF9492;">-&gt;</span></span>
+<span class="giallo-l"><span>                    System.out.</span><span style="color: #DBB7FF;">println</span><span>(</span><span style="color: #ADDCFF;">&quot;&lt;&lt; &quot;</span><span style="color: #FF9492;"> +</span><span> response.</span><span style="color: #DBB7FF;">status</span><span>()</span><span style="color: #FF9492;"> +</span><span style="color: #ADDCFF;"> &quot; &quot;</span><span style="color: #FF9492;"> +</span><span> response.</span><span style="color: #DBB7FF;">url</span><span>())</span></span>
+<span class="giallo-l"><span>            );</span></span>
+<span class="giallo-l"><span>        }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        page </span><span style="color: #FF9492;">=</span><span> browserContext.</span><span style="color: #DBB7FF;">newPage</span><span>();</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>        page.</span><span style="color: #DBB7FF;">setDefaultTimeout</span><span>(</span><span style="color: #DBB7FF;">getDefaultTimeout</span><span>());</span></span>
+<span class="giallo-l"><span>        page.</span><span style="color: #DBB7FF;">setDefaultNavigationTimeout</span><span>(</span><span style="color: #DBB7FF;">getNavigationTimeout</span><span>());</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">AfterEach</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public void</span><span style="color: #DBB7FF;"> closeContext</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        if</span><span> (browserContext </span><span style="color: #FF9492;">!=</span><span style="color: #91CBFF;"> null</span><span>) {</span></span>
+<span class="giallo-l"><span>            browserContext.</span><span style="color: #DBB7FF;">close</span><span>();</span></span>
+<span class="giallo-l"><span>        }</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">AfterAll</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public static void</span><span style="color: #DBB7FF;"> closeBrowser</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        if</span><span> (browser </span><span style="color: #FF9492;">!=</span><span style="color: #91CBFF;"> null</span><span>) {</span></span>
+<span class="giallo-l"><span>            browser.</span><span style="color: #DBB7FF;">close</span><span>();</span></span>
+<span class="giallo-l"><span>        }</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        if</span><span> (playwright </span><span style="color: #FF9492;">!=</span><span style="color: #91CBFF;"> null</span><span>) {</span></span>
+<span class="giallo-l"><span>            playwright.</span><span style="color: #DBB7FF;">close</span><span>();</span></span>
+<span class="giallo-l"><span>        }</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static boolean</span><span style="color: #DBB7FF;"> isHeadless</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        return</span><span> Boolean.</span><span style="color: #DBB7FF;">parseBoolean</span><span>(System.</span><span style="color: #DBB7FF;">getProperty</span><span>(</span><span style="color: #ADDCFF;">&quot;headless&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;true&quot;</span><span>));</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static boolean</span><span style="color: #DBB7FF;"> isDebugMode</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        return</span><span> Boolean.</span><span style="color: #DBB7FF;">parseBoolean</span><span>(System.</span><span style="color: #DBB7FF;">getProperty</span><span>(</span><span style="color: #ADDCFF;">&quot;debug&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;false&quot;</span><span>));</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static int</span><span style="color: #DBB7FF;"> getDefaultTimeout</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        return</span><span> Integer.</span><span style="color: #DBB7FF;">parseInt</span><span>(System.</span><span style="color: #DBB7FF;">getProperty</span><span>(</span><span style="color: #ADDCFF;">&quot;timeout&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;30000&quot;</span><span>));</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">    protected static int</span><span style="color: #DBB7FF;"> getNavigationTimeout</span><span>() {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">        return</span><span> Integer.</span><span style="color: #DBB7FF;">parseInt</span><span>(System.</span><span style="color: #DBB7FF;">getProperty</span><span>(</span><span style="color: #ADDCFF;">&quot;navigationTimeout&quot;</span><span>,</span><span style="color: #ADDCFF;"> &quot;30000&quot;</span><span>));</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="examplepage"><a class="zola-anchor" href="#examplepage" aria-label="Anchor link for: examplepage">ExamplePage</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="java"><span class="giallo-l"><span style="color: #FF9492;">package</span><span> com.thilohohlt.test.e2e.pages;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> com.microsoft.playwright.Page;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">public record</span><span style="color: #FFB757;"> ExamplePage</span><span>(Page page, String baseUrl) {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public void</span><span style="color: #DBB7FF;"> navigate</span><span>() {</span></span>
+<span class="giallo-l"><span>        page.</span><span style="color: #DBB7FF;">navigate</span><span>(baseUrl);</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre><h2 id="exampletest"><a class="zola-anchor" href="#exampletest" aria-label="Anchor link for: exampletest">ExampleTest</a></h2>
+<pre class="giallo" style="color: #F0F3F6; background-color: #0A0C10;"><code data-lang="java"><span class="giallo-l"><span style="color: #FF9492;">package</span><span> com.thilohohlt.test.e2e;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> com.thilohohlt.test.e2e.pages.ExamplePage;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import</span><span> org.junit.jupiter.api.</span><span style="color: #91CBFF;">*</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">import static</span><span> org.assertj.core.api.Assertions.</span><span style="color: #91CBFF;">*</span><span>;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">TestMethodOrder</span><span>(MethodOrderer.OrderAnnotation.class)</span></span>
+<span class="giallo-l"><span>@</span><span style="color: #FF9492;">DisplayName</span><span>(</span><span style="color: #ADDCFF;">&quot;Example E2E Test&quot;</span><span>)</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">public class</span><span style="color: #FFB757;"> ExampleTest</span><span style="color: #FF9492;"> extends</span><span style="color: #91CBFF;"> BaseTest</span><span> {</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    private</span><span> ExamplePage examplePage;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">BeforeEach</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public void</span><span style="color: #DBB7FF;"> setupPages</span><span>() {</span></span>
+<span class="giallo-l"><span>        examplePage </span><span style="color: #FF9492;">= new</span><span style="color: #DBB7FF;"> ExamplePage</span><span>(page, baseUrl);</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">Test</span></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">Order</span><span>(</span><span style="color: #91CBFF;">1</span><span>)</span></span>
+<span class="giallo-l"><span>    @</span><span style="color: #FF9492;">DisplayName</span><span>(</span><span style="color: #ADDCFF;">&quot;Should navigate to example page&quot;</span><span>)</span></span>
+<span class="giallo-l"><span style="color: #FF9492;">    public void</span><span style="color: #DBB7FF;"> testNavigationToPlayerPage</span><span>() {</span></span>
+<span class="giallo-l"><span>        examplePage.</span><span style="color: #DBB7FF;">navigate</span><span>();</span></span>
+<span class="giallo-l"><span>    }</span></span>
+<span class="giallo-l"><span>}</span></span></code></pre>
+</article>
+
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Thilo Hohlt</p>
+            <div class="link-wrapper">
+                <a href="https://thilohohlt.com/legal-disclosure/">Legal notice</a>
+                <a href="https://github.com/thiloho/thiloho.github.io">Source code</a>
+                <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fthilohohlt.com%2F">PageSpeed</a>
+            </div>
+            <div class="link-wrapper">
+                <a href="mailto:contact@thilohohlt.com" title="E-Mail">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <title>E-Mail</title>
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                    </svg>
+                </a>
+                <!--
+                    <a href="" title="LinkedIn">
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <title>LinkedIn</title>
+                            <path
+                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+                            </path>
+                        </svg>
+                    </a>
+                -->
+                <a href="https://github.com/thiloho" title="GitHub">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <title>GitHub</title>
+                        <path
+                            d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://open.spotify.com/user/31gui3cyqufvz5c6jk3zuxx5zgt4?si=007f6f65e8af4f0f"
+                    title="Spotify">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor">
+                        <title>Spotify</title>
+                        <path
+                            d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module">
+        document.addEventListener("click", (e) => {
+            const toc = document.querySelector(".table-of-contents");
+            if (toc?.open && !e.target.closest(".table-of-contents summary")) {
+                toc.open = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
