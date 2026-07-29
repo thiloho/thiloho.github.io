@@ -61,7 +61,7 @@ header {
         flex-direction: column;
         gap: 1rem;
         padding-block-end: 2rem;
-        border-block-end: 1px solid var(--color-border);
+        border-block-end: 0.5625rem double var(--color-border);
     }
 }
 
@@ -198,7 +198,6 @@ main {
 footer {
     background-color: var(--color-bg-footer);
     padding-block: 2rem;
-    border-block-start: 1px solid var(--color-border);
 
     .container {
         display: flex;
